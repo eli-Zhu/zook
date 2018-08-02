@@ -1,0 +1,86 @@
+<style type="text/css">
+    .select2-container .select2-choice{
+        height: 34px;
+    }
+</style>
+#set($layout="layout/spa.vm")
+<div class="modal-header" id="customForm">
+    <button type="button" class="close" data-dismiss="modal"
+        aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <h4 class="modal-title" id="myModalLabel" >$!{generalData.pageTitle}</h4>
+</div>
+## Form
+<form id="modalForm" class="form-horizontal">
+<input type="hidden" id="formId" name="id" value="$!{formdata.id}" />
+<div class="modal-body container-fluid " style="max-height: 700px;overflow-y: scroll;">
+    <div class="modal-body">
+        <div class="form-group">
+            <div class="col-sm-12 control-group has-error">
+                <label class="control-label" for="inputError">
+                    #if(${errorInfo}) ${errorInfo} #end </label>
+            </div>
+        </div>
+        #set($index = 0)
+                #foreach ($formElement in $generalList)
+                #if($formElement.colName!='ID'&& $formElement.colName!='ENABLED' && $formElement.colName!='OPERATOR' && $formElement.colName!='CREATE_BY' && $formElement.colName!='GMT_CREATE' && $formElement.colName!='GMT_MODIFIED')
+                    #if ($index % 2 == 0) 
+            <div class="form-group text-center">
+                    #end
+                    #set($index = $index + 1)
+                    <label class="col-sm-2 control-label" for="">$formElement.colDisplayName</label>
+                    <div class="col-sm-4">
+                        #if($formElement.widgetType=='check2Box')
+                        <select  class="filter-status form-control" id="check2Box" name="check2Box" v-model="formData.$formElement.colName">
+                            <option v-bind:value="1" >是</option>
+                            <option v-bind:value="0" >否</option>
+                        </select>
+                        #elseif($formElement.widgetType=='input')
+                        <input class="form-control"  name="vali_input_$formElement.databaseType" data-type="$formElement.databaseType" v-model="formData.$formElement.colName" type="text" />
+                        #elseif($formElement.widgetType.indexOf("option") != -1 )
+                        <select  class="filter-status form-control" id="select_option" v-model="formData.$formElement.colName" name="vali_select">
+                            <option  value="" >==请选择==</option>
+                                #foreach($item in $selectMap.get($formElement.colName))
+                                    #if($formElement.widgetType=='option(dictTree)')
+                                    <option value="$item.itemKey">$item.itemName</option>
+                                    #else
+                                    <option value="$item.value">$item.text</option>
+                                    #end
+                                #end
+                        </select>
+                        #elseif($formElement.widgetType.indexOf("select2") != -1 && $formElement.isMultiple !=1)
+                         <vue-select :model.sync="formData.$formElement.colName" :options='$selectMap.get($formElement.colName)'  name="select2"></vue-select>
+
+                        #elseif($formElement.isMultiple ==1)
+                        <vue-select :model.sync="formData.$formElement.colName" :configs="shapeType" :options='$selectMap.get($formElement.colName)' :transfer="true" name="mulSelect" :multiple="true" :id="mul"></vue-select>
+
+                        #elseif ($formElement.widgetType=='date')
+                        <input type="text" class="form-control datepicker"  id="date" v-model="formData.$formElement.colName | toDate 'YYYY-MM-DD'" name="" />
+                        #elseif ($formElement.widgetType=='textarea')
+                        <textarea class="form-control" id="" name=""  v-model="formData.$formElement.colName" type="text"/>
+                        #end
+                    </div>
+                    #if ($index % 2 == 0) 
+            </div>   
+                    #end
+                #end 
+                #end  
+            <div class="form-group text-center">
+
+            </div>
+
+        <div class="modal-footer">
+            <button id="dialog-cancel" type="button" class="btn btn-warning"
+                data-dismiss="modal">取消</button>
+            <button id="dialog-submit" type="button" class="btn btn-success">同意
+            </button>
+        </div>
+    </div>
+</div>
+</form>
+<script type="text/javascript" >
+    var formdata=$!{formdata};
+</script>
+<script type="text/javascript" src="${rc.contextPath}/js/configmng/custom/form.js">
+</script>

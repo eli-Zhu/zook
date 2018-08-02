@@ -1,0 +1,72 @@
+<ul class="nav navbar-nav" id="customVue">
+    <li class="menu-dropdown mega-menu-dropdown ">
+        <a data-hover="megamenu-dropdown" data-close-others="true" data-toggle="dropdown" href="javascript:;" class="dropdown-toggle">
+            基础配置 <i class="fa fa-angle-down"></i>
+        </a>
+        <ul class="dropdown-menu" style="min-width: 210px">
+            <li>
+                <div class="mega-menu-content">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="mega-menu-submenu">
+                                #if($sec.isGranted('domain'))
+                                <li>
+                                    <a href="${rc.contextPath}/domainweb/list" class="iconify">
+                                        <i class="icon-layers"></i>
+                                        域配置 </a>
+                                </li>
+                                #end
+                                <li>
+                                    <a href="${rc.contextPath}/dictweb/list" class="iconify">
+                                        <i class="icon-calendar"></i>
+                                        字典表配置 </a>
+                                </li>
+                                #if($sec.isGranted('airWaysCode'))
+                                <li>
+                                    <a href="${rc.contextPath}/airwayscode/list" class="iconify">
+                                        <i class="icon-plane"></i>
+                                        航空公司管理 </a>
+                                </li>
+                                #end
+                                #if($sec.isGranted('cabinCode'))
+                                <li>
+                                    <a href="${rc.contextPath}/cabincode/list" class="iconify">
+                                        <i class="icon-directions"></i>
+                                        舱位维护 </a>
+                                </li>
+                                #end
+                                #if($sec.isGranted('dictTree'))
+                                <li>
+                                    <a href="${rc.contextPath}/dictweb/tree" class="iconify">
+                                        <i class="icon-vector"></i>
+                                        字典树配置 </a>
+                                </li>
+                                #end
+                                #if($sec.isGranted('custom'))
+                                <li>
+                                    <a href="${rc.contextPath}/general/list" class="iconify "  >
+                                        <i class="icon-globe"></i>
+                                        自定义配置页面 </a>
+                                </li>
+                                #end
+                                <li class=" dropdown-submenu">
+                                    <a class=":;" >
+                                        <i class="icon-list"></i>
+                                    动态页面 </a>
+                                    <ul class="dropdown-menu" style="display: none;" >
+                                    
+                                        <li v-for="item in infos">
+                                           <a href="${rc.contextPath}/general/{{item.pageKey}}" >{{item.pageTitle}}</a>
+                                        </li>
+                                    
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </li>
+</ul>
+<script type="text/javascript" src="${rc.contextPath}/js/configmng/header/menu.js"></script>

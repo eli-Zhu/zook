@@ -1,0 +1,182 @@
+<!-- CONTENT -->
+<style type="text/css">
+	.popover{
+    	max-width: 100%;
+	}
+	.centerss {
+ 		margin: auto;
+ 		text-align: center;
+	}
+	.limt_length{
+	  max-width: 250px;
+	  overflow: hidden;
+	  text-overflow:ellipsis;
+	  white-space: nowrap;
+	}
+
+</style>
+#set($currentPath = ${rc.contextPath} + "/dictweb")
+<div class="page-content" id="dictVue">
+    <div class="container-fluid">
+        <vue-breadcrumb first-name="数据字典配置" node="node"></vue-breadcrumb>
+        <div class="row">
+            <div id="rulePage" class="col-ms-12">
+                <div class="portlet light bordered">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="icon-equalizer font-red-sunglo"></i>
+                            <span class="caption-subject font-red-sunglo bold uppercase">数据字典配置</span>
+                            <span class="caption-helper"></span>
+                        </div>
+                        <div class="tools">
+                            <a href="" class="collapse">
+                            </a>
+                            <a href="#portlet-config" data-toggle="modal" class="config">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portlet-body form">
+							<form class="form-horizontal" role="form" v-on:submit.prevent="queryData" id="myForm" action="${currentPath}/list?m=1" method="post">
+								<div class="button-group"></div>
+								<div class="form-group text-center">
+									<label class="col-sm-1 control-label" for="itemKey">字典KEY</label>
+									<div class="col-sm-3">
+										<input class="form-control col-lg-2" id="itemKey" name="itemKey"	v-model="node.itemKey" type="text" v-html="node.itemKey" placeholder="请输入字典key" />
+									</div>
+									<label class="col-sm-1 control-label" for="itemName">字典名称</label>
+									<div class="col-sm-3">
+										<input class="form-control col-lg-2" id="itemName" name="itemName" v-model="node.itemName" type="text" v-html="node.itemName" placeholder="请输入字典名称"/>
+									</div>
+									<label class="col-sm-1 control-label" for="domainName">域名称</label>
+									<div class="col-lg-3">
+										<select id="select_id" class="filter-status form-control" v-model="node.domainId" name="domainId">
+											<option value=""selected>--请选择--</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group" >	
+									<label class="col-sm-1 control-label" for="enabled">状态</label>
+									<div class="col-lg-3">
+										<select  class="filter-status form-control" v-model="node.enabled" name="enabled" >
+											<option value="" selected >--请选择--</option>
+											<option value="1" >有效</option>
+											<option value="0" >无效</option>
+										</select>
+									</div>
+		        	            	<label class="col-sm-1 control-label" >修改时间</label>
+		                            <div class="col-lg-3">
+		                                <div class="input-group date-picker input-daterange" >
+		                                    <input type="text" class="form-control" name="createTimeStart" v-model="node.createTimeStart"  placeholder="请输入开始时间">
+		                                                <span class="input-group-addon">到 </span>
+		                                    <input type="text" class="form-control" name="createTimeEnd" v-model="node.createTimeEnd"  placeholder="请输入结束时间">
+		                                </div>
+		                            </div>
+									<label class="col-sm-1 control-label" for="environment">环境</label>
+									<div class="col-lg-3">
+										<select  class="filter-status form-control" v-model="node.environment" name="environment" >
+											<option value="" selected >--全部--</option>
+											<option value="prod" >生产环境</option>
+											<option value="predeploy" >预发环境</option>
+											<option value="dev" >开发环境</option>
+											<option value="test" >测试环境</option>
+										</select>
+									</div>
+								</div>
+							</form>
+								<div class="button-group centerss"  >
+								#if($sec.isGranted('dict_search'))
+									<button type="submit" v-on:click.prevent="search()" class="btn btn-success" > 
+										<i class="fa fa-fw fa-search fa-lg"></i>搜索
+									</button>
+								#end
+								#if($sec.isGranted('dict_create'))
+									<button type="buttion" v-on:click="create"  id="create" class="btn btn-success" >
+										<span class="glyphicon glyphicon-plus"></span>新增
+									</button>
+								#end
+									<button type="reset" v-on:click="reset" id="flush" class="btn btn-success"><span class="glyphicon glyphicon-refresh"></span>重置</button>
+								</div>
+							<HR style="border:1 dashed #987cb9" width="98%" color=#987cb9 SIZE=1>
+							
+					</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="portlet light">
+                <div class="portlet-body">
+                    <div class="table-scrollable">
+                    <table class="table table-bordered table-hover table-striped" data-page-size="6" v-show="showTable">
+								<thead>
+									<tr>
+										<th>字典KEY</th>
+										<th>字典名称</th>
+										<th>字典值</th>
+										<th>域名称</th>
+										<th>顺序</th>
+										<th>状态</th>
+										<th>描述</th>
+										<th>环境</th>
+										<th>操作人</th>
+										<th>修改时间</th>
+										<th>操作</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr v-for="item in infos.data">
+										<td ><div class="limt_length" v-text="item.itemKey" data-toggle="popover"data-content="{{item.itemKey}}" data-container="body" data-placement="auto top"></div></td>
+										<td v-text="item.itemName"></td>
+										<td ><div class="limt_length" v-text="item.itemValue" data-toggle="popover"data-content="{{item.itemValue}}" data-container="body" data-placement="auto top"></div></td>
+										<td v-text="item.domainId | converter domainList 'id' 'domainKey'"></td>
+										<td v-text="item.itemOrder"></td>
+										<td v-text="item.enabled == 0? '无效': '有效'"></td>
+										<td ><div class="limt_length" v-text="item.description"></div></td>
+										<td v-text="item.environment"></td>
+										<td v-text="item.operator"></td>
+										<td v-text="item.gmtModified | toDate 'YYYY-MM-DD'"></td>
+										<td>
+			                        		<div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
+			                        		#if($sec.isGranted('dict_edit'))
+				                            	<a v-on:click.prevent="edit(item.id)" class="green btn btn-xs " href="#" >编辑
+				                                	<i class="fa fa-fw fa-edit fa-lg"></i>
+				                            	</a>
+			                            	#end
+			                            	#if($sec.isGranted('dict_isVaild'))
+				            				    <a v-if="item.enabled == 0" class="blue btn btn-xs " @click.prevent="enable(item.id)">开启
+				                                    <li class="glyphicon glyphicon-ok" title="开启" >
+				                                    </li>
+				                                </a>
+				                                <a v-if="item.enabled == 1" class="red btn btn-xs " @click.prevent="disable(item.id)">关闭
+				                						<li class="glyphicon glyphicon-remove" title="关闭" ></li>
+				                				</a>
+			                				#end
+			                        </div>
+			                    </td>
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+										<td colspan="12"><vue-page :paginator="infos.paginator"
+												:size="20" :query="queryData"> </vue-page></td>
+									</tr>
+								</tfoot>
+							</table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="applicationModal" tabindex="-1"
+	role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content"></div>
+	</div>
+</div>
+
+<script type="text/javascript">
+	var domainList=$!{domainList};
+</script>
+<script type="text/javascript" src="${rc.contextPath}/js/configmng/dict/list.js"></script>

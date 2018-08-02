@@ -1,0 +1,177 @@
+<style type="text/css">
+    .select2-container .select2-choice{
+        height: 34px;
+    }
+</style>
+<div class="page-content" id="myGrid">
+    <div class="container-fluid">
+        <vue-breadcrumb :first-name="generalData.defName" node="node"></vue-breadcrumb>
+        <div class="row">
+            <div id="domainDiv" class="col-ms-12">
+                <div class="portlet light bordered">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="icon-equalizer font-red-sunglo"></i>
+                            <span class="caption-subject font-red-sunglo bold uppercase" v-text="generalData.pageTitle"></span>
+                            <span class="caption-helper"></span>
+                        </div>
+                        <div class="tools">
+                            <a href="" class="collapse">
+                            </a>
+                            <a href="#portlet-config" data-toggle="modal" class="config">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portlet-body form">
+                        <form class="form-horizontal" role="form" v-on:submit.prevent="queryData" id="myForm" action="${currentPath}/list?m=1" method="post">
+                        #set($index = 0)
+                                #foreach ($formElement in $generalList)
+                                    #if ($formElement.canSearch==1 )
+                                    #if ($index % 4 == 0) 
+                            <div class="form-group text-center">
+                                    #end
+                                    #set($index = $index + 1)
+                                    <label class="col-sm-1 control-label" for="">$formElement.colDisplayName</label>
+                                    <div class="col-sm-2">
+                                        #if ($formElement.colName=='ENABLED')
+                                        <select  class="filter-status form-control" v-model="parms.$formElement.colName">
+                                            <option selected value="" >全部</option>
+                                            <option v-for="item in enabled" value="{{item.value}}">{{item.text}}</option>
+                                        </select> 
+                                        #elseif($formElement.widgetType=='input')
+                                        <input class="form-control"  name="" v-model="parms.$formElement.colName" type="text" />
+                                        #elseif($formElement.widgetType.indexOf("option") != -1)
+                                        <select class="filter-status form-control" v-model="parms.$formElement.colName" >
+                                            <option selected value="" >==请选择==</option>
+                                            #foreach($item in $selectMap.get($formElement.colName))
+                                                #if($formElement.widgetType=='option(dictTree)')
+                                                <option value="$item.itemKey">$item.itemName</option>
+                                                #else
+                                                <option value="$item.value">$item.text</option>
+                                                #end
+                                            #end
+                                        </select>
+                                        #elseif($formElement.widgetType.indexOf("select2") != -1)
+                                        <vue-select :model.sync="parms.$formElement.colName" :options='$selectMap.get($formElement.colName)'  id="select2" name="select2"></vue-select>
+                                        #elseif ($formElement.widgetType=='date')
+                                        <input type="text" class="form-control datepicker"  id="date" v-model="parms.$formElement.colName" name="" />
+                                        #end
+                                    </div>
+                                    #if ($index % 4 == 0) 
+                            </div>   
+                                    #end
+                                    #end
+                                #end  
+                            <div class="form-group text-center">
+
+                            </div>
+                        </form>
+                        <div class="button-group text-center">
+                            <button type="buttion" v-on:click="create(generalData.tableName)"  id="create" data-value="${currentPath}/create" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span>新增</button>
+                            <button type="buttion" v-on:click="search" class="btn btn-success"><i class="fa fa-fw fa-search fa-lg"></i>搜索</button>
+                            <button type="buttion" v-on:click="reset" id="flush" class="btn btn-success"><span class="glyphicon glyphicon-refresh"></span>重置</button>
+                            <button type="buttion" v-on:click="batchUpdate(1)" id="batchEnable" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span>全部有效</button>
+                            <button type="buttion" v-on:click="batchUpdate(0)" id="batchDisable" class="btn btn-success"><span class="glyphicon glyphicon-remove"></span>全部无效</button>
+                        </div>
+                        <HR style="border:1 dashed #987cb9" width="90%" color=#987cb9 SIZE=1>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="portlet light">
+                <div class="portlet-body">
+                    <div class="table-scrollable">
+                        <table class="table table-bordered table-hover table-striped" data-page-size="6">
+                            <thead>
+                                <tr>
+                                <th style="width:1px" id="checkAll" class="checker">
+                                    <vue-icheck :value.sync="checkAll" true-value="1"></vue-icheck>
+                                    ##<input type="checkbox" class="icheck" v-model="checkAll" :true-value="1" :false-value="0">
+                                </th>
+
+                                #foreach ($nameElement in $generalList)
+                                #if($nameElement.showInTable==1)
+                                    <th class="odd gradeX">$nameElement.colDisplayName</th>
+                                #end  
+                                #end
+                                <th>状态</th>
+                                <th>操作人</th>
+                                <th>操作时间</th>
+                                <th>操作</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="item in infos.data" >
+                                <td>
+                                    <vue-icheck :value.sync="checked" :true-value="'' + item.ID"></vue-icheck>
+                                </td>
+
+                                #foreach($nameElement in $generalList)
+                                    #if($nameElement.showInTable==1)
+                                        #if($nameElement.widgetType =='date')
+                                        <td v-text="item.$nameElement.colName | toDate 'YYYY-MM-DD'"></td>
+                                        #elseif($nameElement.widgetType =='select2'||$nameElement.widgetType =='option(other)')
+                                        <script type="text/javascript" >
+                                        var jsonAllData$nameElement.colName={};
+                                        $(document).ready(function() {
+                                            jsonAllData$nameElement.colName=JSON.parse('$jsonSelectMap.get($nameElement.colName)');
+                                        });
+                                        </script>
+                                        <td v-text='item.$nameElement.colName | converter "jsonAllData$nameElement.colName" "value" "text"'></td>
+                                        #else
+                                        <td v-text="item.$nameElement.colName | "></td>
+                                        #end
+                                    #end
+                                #end
+                                <td v-text="item.ENABLED == 0? '无效': '有效'"></td>
+                                <td v-text="item.OPERATOR"></td>
+                                <td v-text="item.GMT_MODIFIED | toDate 'YYYY-MM-DD'"></td>
+                                    <td>
+                                        <div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
+                                            <a v-on:click.prevent="edit(item.ID)" class="green btn btn-xs " href="#" >编辑
+                                                <i class="fa fa-fw fa-edit fa-lg"></i>
+                                            </a>
+                                            <a v-on:click.prevent="read(item.ID)" class="yellow btn btn-xs " href="#" >查看日志
+                                                <i class="glyphicon glyphicon-tasks"></i>
+                                            </a>
+                                            <a v-show="item.ENABLED == 0" class="blue btn btn-xs " @click.prevent="enable(item.ID)">开启
+                                                <li  class="glyphicon glyphicon-ok" title="开启" ></li>
+                                            </a>
+                                            <a v-show="item.ENABLED == 1" class="red btn btn-xs " @click.prevent="disable(item.ID)">关闭
+                                                <li  class="glyphicon glyphicon-remove" title="关闭" ></li>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                     <td colspan="14">
+                                         <vue-page :paginator="infos.paginator" :size="20" :query="queryData"> </vue-page>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="applicationModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document" style="width:1000px">
+        <div class="modal-content"></div>
+    </div>
+</div>
+<div  class="modal fade" id="logModal" tabindex="-1"
+    role="dialog">
+    <div class="modal-dialog" role="document" style="width:1000px">
+        <div class="modal-content"></div>
+    </div>
+</div>
+<script type="text/javascript" >
+var generalData=$!{generalData};
+</script>
+<script type="text/javascript" src="${rc.contextPath}/js/configmng/custom/list.js"></script>

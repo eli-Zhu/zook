@@ -1,0 +1,133 @@
+<!-- CONTENT -->
+<div class="page-content" id="dictTree">
+    <div class="container-fluid">
+        <vue-breadcrumb first-name="字典树" node="node"></vue-breadcrumb>
+        <div class="row">
+            <div id="rulePage" class="col-lg-12">
+                <div class="portlet light col-lg-12">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="icon-equalizer font-red-sunglo"></i>
+                            <span class="caption-subject font-red-sunglo bold uppercase">数据字典配置</span>
+                            <span class="caption-helper"></span>
+                        </div>
+                        <div class="tools">
+                            <a href="" class="collapse">
+                            </a>
+                            <a href="#portlet-config" data-toggle="modal" class="config">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portlet-body">
+                    	<div class="portlet light col-lg-12">
+                    		<div class="col-lg-3">
+				        		<div id="tree" class="tree-demo">
+								</div>
+							</div>
+							<div class="col-lg-9">
+								<form class="form-horizontal" role="form" v-on:submit.prevent="queryData" id="myForm" action="${currentPath}/list?m=1" method="post">
+									<div class="form-group text-center">
+										<label class="col-sm-1 control-label" for="itemKey">字典KEY</label>
+										<div class="col-sm-3">
+											<input class="form-control col-lg-2" id="itemKey" name="itemKey"	v-model="dictData.itemKey" type="text" v-html="dictData.itemKey"  />
+										</div>
+										<label class="col-sm-1 control-label" for="itemValue">字典值</label>
+										<div class="col-sm-3">
+											<input class="form-control col-lg-2" id="itemValue" name="itemValue"	v-model="dictData.itemValue" type="text" v-html="dictData.itemValue"  />
+										</div>
+										<label class="col-sm-1 control-label" for="itemName">字典名称</label>
+										<div class="col-sm-3">
+											<input class="form-control col-lg-2" id="itemName" name="itemName" v-model="dictData.itemName" type="text" v-html="dictData.itemName" />
+										</div>
+									</div>
+									<div class="form-group" >	
+										<div class="col-lg-3" style="display:none">
+											<input class="form-control col-lg-2" id="domainId" name="domainId" value="9999" type="text"  />
+										</div>
+										<label class="col-sm-1 control-label" for="itemOrder">顺序</label>
+										<div class="col-sm-3">
+											<input class="form-control col-lg-2" id="itemOrder" name="itemOrder" v-model="dictData.itemOrder" type="text" v-html="dictData.itemOrder" />
+										</div>
+										<label class="col-sm-1 control-label" for="description">描述</label>
+										<div class="col-sm-3">
+											<input class="form-control col-lg-2" id="description" name="description" v-model="dictData.description" type="text" v-html="dictData.description" />
+										</div>
+									</div>
+								</form>
+								<div class="button-group centerss"  >
+									<button type="submit" v-on:click.prevent="search()" class="btn btn-success" > 
+										<i class="fa fa-fw fa-search fa-lg"></i>搜索
+									</button>
+									<button type="buttion" v-on:click="edit"  id="edit" class="btn btn-success" v-show="saveButtonShow">
+										<span class="glyphicon glyphicon-plus"></span>保存
+									</button>
+								</div>
+								<HR style="border:1 dashed #987cb9" width="98%" color=#987cb9 SIZE=1>
+								<table class="table table-bordered table-hover table-striped" data-page-size="6" >
+									<thead>
+										<tr>
+											<th>字典KEY</th>
+											<th>字典名称</th>
+											<th>字典值</th>
+											<th>域名称</th>
+											<th>顺序</th>
+											<th>状态</th>
+											<th>描述</th>
+											<th>操作人</th>
+											<th>修改时间</th>
+											<th>操作</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr v-for="item in infos">
+											<td v-text="item.itemKey"></td>
+											<td v-text="item.itemName"></td>
+											<td ><div class="limt_length" v-text="item.itemValue"></div></td>
+											<td v-text="item.domainId | converter domainList 'id' 'domainKey'"></td>
+											<td v-text="item.itemOrder"></td>
+											<td v-text="item.enabled == 0? '无效': '有效'"></td>
+											<td v-text="item.description"></td>
+											<td v-text="item.operator"></td>
+											<td v-text="item.gmtModified | toDate 'YYYY-MM-DD'"></td>
+											<td>
+				                        		<div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
+					            				    <a v-if="item.enabled == 0" class="blue btn btn-xs " @click.prevent="enable(item.id)">开启
+					                                    <li class="glyphicon glyphicon-ok" title="开启" >
+					                                    </li>
+					                                </a>
+					                                <a v-if="item.enabled == 1" class="red btn btn-xs " @click.prevent="disable(item.id)">关闭
+					                						<li class="glyphicon glyphicon-remove" title="关闭" ></li>
+					                				</a>
+				                        		</div>
+			                    			</td>
+										</tr>
+									</tbody>
+									<tfoot>
+										<tr>
+											<td colspan="10"><vue-page :paginator="paginator"
+													:size="20" :query="queryData"> </vue-page></td>
+										</tr>
+									</tfoot>
+								</table>
+							</div>
+			        	</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+<script type="text/javascript">
+	var domainList=$!{domainList};
+</script>
+<script type="text/javascript" src="${rc.contextPath}/js/configmng/dict/treeList.js"></script>
+<style type="text/css">
+	.centerss {
+ 		margin: auto;
+ 		text-align: center;
+	}
+	.limt_length{
+	  max-width: 150px;
+	  overflow: hidden;
+	  text-overflow:ellipsis;
+	  white-space: nowrap;
+	}
+</style>

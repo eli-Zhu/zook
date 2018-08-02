@@ -1,0 +1,45 @@
+#set($layout="layout/spa.vm") #set($currentPath = ${rc.contextPath} +
+"/cabincode") ## Title
+<div class="modal-header" id="logForm">
+	<button type="button" class="close" data-dismiss="modal"
+		aria-label="Close">
+		<span aria-hidden="true">&times;</span>
+	</button>
+	<h4 class="modal-title" id="myModalLabel">舱位变更日志</h4>
+</div>
+## table
+<div class="modal-body" id="modalTable" >
+	<table class="table table-bordered table-hover table-striped" data-page-size="6">
+	    <input type="hidden" name="id" value="$!{cabinId}" />
+				<thead>
+					<tr>
+						<th>操作人</th>
+						<th>操作类型</th>
+						<th>操作时间</th>
+						<th>备注</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr v-for="item in list.data">
+						<td v-text="item.operator"></td>
+						<td v-text="item.fccOperateType==1?'创建':'更新'"></td>
+						<td v-text="item.gmtModified | toDate 'YYYY-MM-DD'"></td>
+						<td v-text="item.fccOperateDes"></td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="12"><vue-page :paginator="list.paginator"
+								:size="20" :query="queryData"> </vue-page></td>
+					</tr>
+				</tfoot>
+	</table>
+</div>
+<script type="text/javascript" >
+debugger;
+</script>
+<script type="text/javascript" src="${rc.contextPath}/js/configmng/cabincode/log.js"></script>
+
+
+
+

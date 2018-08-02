@@ -1,0 +1,85 @@
+#set($layout="layout/spa.vm") #set($currentPath = ${rc.contextPath} +
+"/dictweb") ## Title
+<div class="modal-header" id="dicForm">
+	<button type="button" class="close" data-dismiss="modal"
+		aria-label="Close">
+		<span aria-hidden="true">&times;</span>
+	</button>
+	<h4 class="modal-title" id="myTitle">${ref.title}</h4>
+</div>
+## Form
+<form id="modalForm" class="form-horizontal">
+	<input type="hidden" id="action" value="${ref.action}" /> <input
+		type="hidden" name="id" v-model="dict.id" />
+	<div class="modal-body">
+		<div class="form-group">
+			<div class="col-sm-12 control-group has-error">
+				<label class="control-label" for="inputError">
+					#if(${errorInfo}) ${errorInfo} #end </label>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-2 control-label" for="itemKey">字典KEY</label>
+			<div class="col-sm-8">
+				<input class="form-control" id="itemKey" name="itemKey" type="text" 
+					v-model="dict.itemKey" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-2 control-label" for="itemName">字典名称</label>
+			<div class="col-sm-8">
+				<input class="form-control" id="itemName" name="itemName"
+					type="text" v-model="dict.itemName" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-2 control-label" for="itemValue">字典值</label>
+			<div class="col-sm-8">
+				<input class="form-control" id="itemValue" name="itemValue"
+					type="text" v-model="dict.itemValue" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-2 control-label" for="domainName">域名称</label>
+			<div class="col-lg-8">
+			<select id="select_id" class="filter-status form-control" name="domainId" v-model="dict.domainId" >
+				<option value="" >--请选择--</option>
+				<option v-for="item in list" value="{{item.id}}" v-text="item.domainKey" ></option>
+			</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-2 control-label" for="environment">开发环境</label>
+			<div class="col-lg-8">
+				<select class="js-example-tags form-control" name="environment" multiple="multiple" >
+					<option v-for="item in envList" v-bind:value="item.id"  v-text="item.text" v-bind:selected="exists(item.id, envNewList)"></option>
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-2 control-label" for="itemOrder">顺序</label>
+			<div class="col-sm-8">
+				<input class="form-control" id="itemOrder" name="itemOrder" v-model="dict.itemOrder" number type="text"  min="0"  data-bv-greaterthan-message="输入值必须大于0"     max="10000000000" data-bv-lessthan-message="输入值必须小于11位" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-2 control-label" for="description">描述</label>
+			<div class="col-sm-8">
+				<input class="form-control" id="description" name="description"
+					type="text" v-model="dict.description" />
+			</div>
+		</div>
+		
+		<div class="modal-footer">
+			<button @click.prevent="copy()" type="button" class="btn btn-warning" v-show="copyBtn">复制</button>
+			<button id="dialog-cancel" type="button" class="btn btn-warning"
+				data-dismiss="modal">取消</button>
+			<button id="dialog-submit" type="button" class="btn btn-success">同意
+			</button>
+		</div>
+	</div>
+</form>
+<script type="text/javascript">
+	var dict=$!{dict};
+</script>
+<script type="text/javascript" src="${rc.contextPath}/js/configmng/dict/form.js"></script>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/zook.iml" filepath="$PROJECT_DIR$/zook.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zook-client/zook-client.iml" filepath="$PROJECT_DIR$/zook-client/zook-client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zook-core/zook-core.iml" filepath="$PROJECT_DIR$/zook-core/zook-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zook-integration/zook-integration.iml" filepath="$PROJECT_DIR$/zook-integration/zook-integration.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zook-persistence/zook-persistence.iml" filepath="$PROJECT_DIR$/zook-persistence/zook-persistence.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zook-test/zook-test.iml" filepath="$PROJECT_DIR$/zook-test/zook-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zook-util/zook-util.iml" filepath="$PROJECT_DIR$/zook-util/zook-util.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zook-web/zook-web.iml" filepath="$PROJECT_DIR$/zook-web/zook-web.iml" />
+    </modules>
+  </component>
+</project>

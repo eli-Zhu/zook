@@ -1,0 +1,45 @@
+#set($layout="layout/spa.vm") #set($currentPath = ${rc.contextPath} +
+"/general") ## Title
+<div class="modal-header" id="logForm">
+	<button type="button" class="close" data-dismiss="modal"
+		aria-label="Close">
+		<span aria-hidden="true">&times;</span>
+	</button>
+	<h4 class="modal-title" id="myModalLabel">变更日志</h4>
+</div>
+## table
+<div class="modal-body" id="modalTable" >
+	<table class="table table-bordered table-hover table-striped" data-page-size="6">
+	    <input type="hidden" name="id" value="$!{tableRecordId}" />
+				<thead>
+					<tr>
+						<th>操作类型</th>
+						<th>操作时间</th>
+						<th>更新记录</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr v-for="(index, item) in logList.data">
+						<td v-text="index==logList.data.length-1?'新建':'更新'"></td>
+						<td v-text="item.gmtModified | toDate 'YYYY-MM-DD HH:mm:ss'"></td>
+						<td v-text="item.content"></td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="12"><vue-page :paginator="logList.paginator"
+								:size="10" :query="queryData"> </vue-page></td>
+					</tr>
+				</tfoot>
+	</table>
+</div>
+<script type="text/javascript">
+ var tableRecordId=$!{tableRecordId};
+ var tableName='$!{tableName}';
+</script>
+
+<script type="text/javascript" src="${rc.contextPath}/js/configmng/custom/log.js"></script>
+
+
+
+

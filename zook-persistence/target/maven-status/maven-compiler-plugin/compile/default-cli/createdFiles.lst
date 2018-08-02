@@ -1,0 +1,6 @@
+com/zook/persistence/dataobject/ZookAttributeDO.class
+com/zook/persistence/dataobject/ZookResourceDO.class
+com/zook/persistence/daointerface/ZookResourceDAO.class
+com/zook/persistence/daointerface/ZookDomainDAO.class
+com/zook/persistence/daointerface/ZookAttributeDAO.class
+com/zook/persistence/dataobject/ZookDomainDO.class

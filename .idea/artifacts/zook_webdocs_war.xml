@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="zook-webdocs:war">
+    <output-path>$PROJECT_DIR$/zook-webdocs/target</output-path>
+    <root id="archive" name="zook-webdocs-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="zook-webdocs:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,189 @@
+
+<!-- CONTENT -->
+#set($currentPath = ${rc.contextPath} + "/product")
+<div class="page-content" id="productVue">
+    <div class="container-fluid">
+        <vue-breadcrumb first-name="分众产品列表" node="node"></vue-breadcrumb>
+        <div class="row">
+            <div id="rulePage" class="col-ms-12">
+                <div class="portlet light bordered">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="icon-equalizer font-red-sunglo"></i>
+                            <span class="caption-subject font-red-sunglo bold uppercase">分众产品列表</span>
+                            <span class="caption-helper"></span>
+                        </div>
+                        <div class="tools">
+                            <a href="" class="collapse">
+                            </a>
+                            <a href="#portlet-config" data-toggle="modal" class="config">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portlet-body form">
+							<form class="form-horizontal" role="form" v-on:submit.prevent="queryData" id="myForm" action="${currentPath}/list?m=1" method="post">
+								<div class="button-group"></div>
+								<div class="form-group ">
+									<label class="col-sm-1 control-label" for="airWaysCode">产品代码</label>
+									<div class="col-lg-2">
+					                	<input type="text" class="form-control"  v-model="node.validity" name="validity"  >
+									</div>
+									<label class="col-sm-1 control-label" for="accBaseCabinCodeType">产品名称</label>
+									<div class="col-lg-2">
+					                	<input type="text" class="form-control"  v-model="node.validity" name="validity"  >
+									</div>
+									<label class="col-sm-1 control-label" for="validity">产品等级</label>
+					            	<div class="col-lg-2">
+									<select  class="filter-status form-control" id="accType" name="accType" v-model="node.accType" >
+										<option value="" >--请选择--</option>
+										<option value="0" >顶级</option>
+										<option value="1" >一级</option>
+										<option value="2" >二级</option>
+										<option value="3" >三级</option>
+									</select>					            	</div>
+					            	<label class="col-sm-1 control-label" for="accType">验证类型</label>
+									<div class="col-lg-2">
+									<select  class="filter-status form-control" id="accType" name="accType" v-model="node.accType" >
+										<option value="" >--请选择--</option>
+										<option value="0" >支付前</option>
+										<option value="3" >支付后</option>
+									</select>
+									</div>
+								</div>
+								<div class="form-group ">
+									<label class="col-sm-1 control-label" for="accBaseCabinCodeType">产品名称</label>
+									<div class="col-lg-2">
+									<select id="select_statusId" class="filter-status form-control" id="accBaseCabinCodeType" name="accBaseCabinCodeType" v-model="node.accBaseCabinCodeType" >
+										<option value="" >--请选择--</option>
+									</select>
+									</div>
+									<label class="col-sm-1 control-label" for="accBaseCabinCodeType">产品名称</label>
+									<div class="col-lg-2">
+									<select id="select_statusId" class="filter-status form-control" id="accBaseCabinCodeType" name="accBaseCabinCodeType" v-model="node.accBaseCabinCodeType" >
+										<option value="" >--请选择--</option>
+									</select>
+									</div>
+									<label class="col-sm-1 control-label" for="accBaseCabinCodeType">短信模板</label>
+									<div class="col-lg-2">
+									<select id="select_statusId" class="filter-status form-control" id="accBaseCabinCodeType" name="accBaseCabinCodeType" v-model="node.accBaseCabinCodeType" >
+										<option value="0" >无</option>
+										<option value="1" >标签一</option>
+										<option value="2" >标签二</option>
+									</select>
+									</div>
+									<label class="col-sm-1 control-label" for="accBaseCabinCodeType">状态</label>
+									<div class="col-lg-2">
+									<select id="select_statusId" class="filter-status form-control" id="accBaseCabinCodeType" name="accBaseCabinCodeType" v-model="node.accBaseCabinCodeType" >
+										<option value="" >--请选择--</option>
+										<option value="1" >有效</option>
+										<option value="2" >无效</option>
+									</select>
+									</div>
+								</div>
+							</form>
+								<div class="button-group centerss"  >
+									<button type="submit" v-on:click.prevent="search()" class="btn btn-success" > 
+										<i class="fa fa-fw fa-search fa-lg"></i>搜索
+									</button>
+									<button type="buttion" v-on:click.prevent="create()"  id="create" class="btn btn-success" >
+										<span class="glyphicon glyphicon-plus"></span>新增
+									</button>
+									<button type="reset" v-on:click.prevent="reset()" id="reset" class="btn btn-success"><span class="glyphicon glyphicon-refresh"></span>重置</button>
+									<button type="push" v-on:click.prevent="push()" id="flush" class="btn btn-success"><span class="glyphicon glyphicon-cloud-upload"></span>发布</button>
+								</div>
+							<HR style="border:1 dashed #987cb9" width="90%" color=#987cb9 SIZE=1>
+							
+					</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="portlet light">
+                <div class="portlet-body">
+                    <div class="table-scrollable">
+                    <table class="table table-bordered table-hover table-striped" data-page-size="6" v-show="showTable">
+								<thead>
+									<tr>
+										<th class="table-checkbox" style:"width:5px" >
+										<input type="checkbox" class="group-checkable" data-set="#sample_1 .checkboxes"/>全选</th>
+										<th>产品名称</th>
+										<th>产品代码</th>
+										<th>外显名称</th>
+										<th>验证类型</th>
+										<th>产品等级</th>
+										<th>产品说明</th>
+										<th>产品备注</th>
+										<th>产品状态</th>
+										<th>父渠道</th>
+										<th>子渠道</th>
+										<th>短信模板</th>
+										<th>操作</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr v-for="item in infos.data" class="odd gradeX">
+										<td v-text="item.cabinCode">
+											<input type="checkbox" class="checkboxes" value="1"/>
+										</td>
+										<td v-text="item.cabinCode"></td>
+										<td v-text="item.cabinCode"></td>
+										<td v-text="item.cabinCode"></td>
+										<td v-text="item.cabinCode"></td>
+										<td v-text="item.cabinCode"></td>
+										<td v-text="item.cabinCode"></td>
+										<td v-text="item.cabinCode"></td>
+										<td v-text="item.cabinCode"></td>
+										<td v-text="item.cabinCode"></td>
+										<td v-text="item.accIsPrivateCabin==1?'是':'否'"></td>
+										<td v-text="item.accIsOffical == 1? '是': '否'"></td>
+										<td>
+                                        	<div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
+                                            	<li @click.prevent="edit(item.id)" class="glyphicon glyphicon-edit"></li>
+                                            	<li @click.prevent="read(item.id)" class="glyphicon glyphicon-tasks"></li>
+                        				    	<template v-if="item.enabled == 0">
+                                            		<li class="glyphicon glyphicon-ok" title="开启" @click.prevent="enable(item.id)">
+                                            		</li>
+                                            	</template>
+                                            	<template v-if="item.enabled == 1">
+                        							<li class="glyphicon glyphicon-remove" title="关闭" @click.prevent="disable(item.id)"></li>
+                        						</template>
+                                        	</div>
+			                    		</td>
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+										<td colspan="12"><vue-page :paginator="infos.paginator"
+												:size="20" :query="queryData"> </vue-page></td>
+									</tr>
+								</tfoot>
+							</table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div  class="modal fade" id="applicationModal" tabindex="-1"
+	role="dialog">
+	<div class="modal-dialog" role="document" style="width:1000px">
+		<div class="modal-content"></div>
+	</div>
+</div>
+<div  class="modal fade" id="logModal" tabindex="-1"
+	role="dialog">
+	<div class="modal-dialog" role="document" style="width:1000px">
+		<div class="modal-content"></div>
+	</div>
+</div>
+
+
+<script type="text/javascript" src="${rc.contextPath}/js/configmng/product/list.js"></script>
+<style type="text/css">
+	.centerss {
+ 		margin: auto;
+ 		text-align: center;
+	}
+</style>

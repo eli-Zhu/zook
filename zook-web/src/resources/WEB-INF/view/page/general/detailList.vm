@@ -1,0 +1,137 @@
+<!-- CONTENT -->
+#set($currentPath = ${rc.contextPath} + "/general")
+<div class="page-content" id="detailVue">
+    <div class="container-fluid">
+        <vue-breadcrumb first-name="列明细列表"></vue-breadcrumb>
+        <div class="row">
+            <div id="generalPage" class="col-ms-12">
+                <div class="portlet light bordered">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="icon-equalizer font-red-sunglo"></i>
+                            <span class="caption-subject font-red-sunglo bold uppercase">列明细列表</span>
+                            <span class="caption-helper"></span>
+                        </div>
+                        <div class="tools">
+                            <a href="" class="collapse">
+                            </a>
+                            <a href="#portlet-config" data-toggle="modal" class="config">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portlet-body form">
+            	    	<form class="form-horizontal" role="form" v-on:submit.prevent="queryData" id="query" action="${currentPath}/list?m=1" method="post">
+            	            <div class="form-group text-center">
+            	                <label class="col-sm-1 control-label" for="colName">数据库列名</label>
+            	                <div class="col-sm-2">
+            	                    <input class="form-control" id="colName" name="colName" v-model="node.colName" type="text" placeholder="数据库列名"/>
+            	                </div>
+                                <label class="col-sm-1 control-label" for="enabled">状态</label>
+                                <div class="col-lg-2">
+                                    <select  class="filter-status form-control" v-model="node.enabled" name="enabled">
+                                        <option value="" selected >--请选择--</option>
+                                        <option value="1" >启用</option>
+                                        <option value="0" >关闭</option>
+                                    </select>
+                                
+	                            </div>
+        	            	</div>
+            	        </form>
+                        <div class="button-group centerss">
+                            <button type="buttion" v-on:click="create"  id="create" data-value="${currentPath}/create" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span>新增</button>
+                            <button type="buttion" v-on:click="queryData" class="btn btn-success"><i class="fa fa-fw fa-search fa-lg"></i>搜索</button>
+            	            <button type="buttion" v-on:click="reset" id="flush" class="btn btn-success"><span class="glyphicon glyphicon-refresh"></span>重置</button>
+            	            <button type="buttion" v-on:click="goBack" id="goBack" class="btn btn-success"><span class="glyphicon glyphicon-backward"></span>返回</button>
+                        </div>
+                        <HR style="border:1 dashed #987cb9" width="98%" color=#987cb9 SIZE=1>
+                        </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="portlet light">
+                <div class="portlet-body">
+                    <div class="table-scrollable">
+	        <table class="table table-bordered table-hover table-striped" data-page-size="6">
+	            <thead>
+	            <tr>
+	                <th>序号</th>
+	                <th>数据库列名</th>
+	                <th>显示名称</th>
+	                <th>字段类别</th>
+	                <th>控件类别</th>
+	                <th>是否可刷选</th>
+	                <th>是否显示说明</th>
+	                <th>是否可以为空</th>
+	                <th>是否在列表中显示</th>
+	                <th>是否是主键</th>
+	                <th>顺序</th>
+	                <th>状态</th>
+	                <th>操作人</th>
+	                <th>操作时间</th>
+	                <th>操作</th>
+	            </tr>
+	            </thead>
+	            <tbody>
+	                <tr v-for="(index, item) in infos.data">
+		                <td v-text="index + 1"></td>
+		                <td v-text="item.colName"></td>
+		                <td v-text="item.colDisplayName"></td>
+		                <td v-text="item.databaseType"></td>
+		                <td v-text="item.widgetType"></td>
+		                <td v-text="item.canSearch ==0?'否':'是'"></td>
+		                <td v-text="item.showDescription ==0?'否':'是'"></td>
+		                <td v-text="item.canNull==0?'否':'是'"></td>
+		                <td v-text="item.showInTable ==0?'否':'是'"></td>
+		                <td v-text="item.isPrimaryKey ==0?'否':'是'"></td>
+		                <td v-text="item.rank"></td>
+		                <td v-text="item.enabled ==0?'关闭':'启用'"></td>
+		                <td v-text="item.operator"></td>
+		                <td v-text="item.gmtModified | toDate 'YYYY-MM-DD'"></td>
+	                    <td>
+	                        <div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
+	                        	<a v-on:click.prevent="edit(item.id)" class="green btn btn-xs " href="#" >编辑
+	                        		<li class="glyphicon glyphicon-edit"></li>
+	                        	</a>
+	          				    <a v-if="item.enabled == 0"class="blue btn btn-xs "  @click.prevent="enable(item.id)">开启
+	                                <li class="glyphicon glyphicon-ok" title="开启" >
+	                                </li>
+	                            </a>
+	                            <a v-if="item.enabled == 1" class="red btn btn-xs " @click.prevent="disable(item.id)">关闭
+	            						<li class="glyphicon glyphicon-remove" title="关闭"></li>
+	            				</a>
+	                        </div>
+	                    </td>
+	                </tr>
+	            </tbody>
+	            <tfoot>
+	            <tr>
+	               	 <td colspan="16">
+	                     <vue-page :paginator="infos.paginator" :size="20" :query="queryData"> </vue-page>
+	                </td>
+	           	</tr>
+	            </tfoot>
+	        </table>
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="applicationModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document" style="width:1100px">
+        <div class="modal-content"></div>
+    </div>
+</div>
+<script type="text/javascript" >
+	var defId='$!{defId}';
+</script>
+<script type="text/javascript" src="${rc.contextPath}/js/configmng/general/detailList.js"></script>
+<style type="text/css">
+    .centerss {
+        margin: auto;
+        text-align: center;
+    }
+</style>

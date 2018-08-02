@@ -1,0 +1,183 @@
+
+</script>
+<!-- CONTENT -->
+#set($currentPath = ${rc.contextPath} + "/airwayscodeweb")
+<div class="page-content" id="airVue">
+    <div class="container-fluid">
+        <vue-breadcrumb first-name="航空公司管理" node="node"></vue-breadcrumb>
+        <div class="row">
+            <div id="rulePage" class="col-ms-12">
+                <div class="portlet light bordered">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="icon-equalizer font-red-sunglo"></i>
+                            <span class="caption-subject font-red-sunglo bold uppercase">航空公司管理</span>
+                            <span class="caption-helper"></span>
+                        </div>
+                        <div class="tools">
+                            <a href="" class="collapse">
+                            </a>
+                            <a href="#portlet-config" data-toggle="modal" class="config">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portlet-body form">
+							<form class="form-horizontal" role="form" v-on:submit.prevent="queryData" id="myForm" action="${currentPath}/list?m=1" method="post">
+								<div class="button-group"></div>
+								<div class="form-group ">
+									<label class="col-sm-1 control-label" for="airWaysCode">航司二字码</label>
+									<div class="col-sm-2">
+										<input class="form-control col-lg-2" id="airWaysCode" name="airWaysCode"	v-model="node.airWaysCode" type="text" v-html="node.airWaysCode" placeholder="请输入航空公司二字码" />
+									</div>
+									<label class="col-sm-1 control-label" for="gbName">航司名称</label>
+									<div class="col-sm-2">
+										<input class="form-control col-lg-2" id="gbName" name="gbName" v-model="node.gbName" type="text" v-html="node.gbName" placeholder="请输入航空公司名称"/>
+									</div>
+									<label class="col-sm-1 control-label" for="isInter">是否开通国际航班</label>
+									<div class="col-lg-2">
+										<select  class="filter-status form-control" v-model="node.isInter" name="isInter" >
+											<option value="">所有</option>
+											<option value="1" >开通</option>
+											<option value="0" >未开通</option>
+										</select>
+									</div>
+									<label class="col-sm-1 control-label" for="enabled">状态</label>
+									<div class="col-lg-2">
+										<select  class="filter-status form-control" v-model="node.enabled" name="enabled" >
+											<option value="" selected >--请选择--</option>
+											<option value="1" >运行</option>
+											<option value="0" >关闭</option>
+										</select>
+									</div>
+								</div>
+							</form>
+								<div class="button-group centerss"  >
+								#if($sec.isGranted('airWaysCode_search'))
+									<button type="submit" v-on:click.prevent="search()" class="btn btn-success" > 
+										<i class="fa fa-fw fa-search fa-lg"></i>搜索
+									</button>
+								#end
+								#if($sec.isGranted('airWaysCode_create'))
+									<button type="buttion" v-on:click.prevent="create()"  id="create" class="btn btn-success" >
+										<span class="glyphicon glyphicon-plus"></span>新增
+									</button>
+								#end
+									<button type="reset" v-on:click.prevent="reset()" id="reset" class="btn btn-success"><span class="glyphicon glyphicon-refresh"></span>重置</button>
+								</div>
+							<HR style="border:1 dashed #987cb9" width="98%" color=#987cb9 SIZE=1>
+							
+					</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="portlet light">
+                <div class="portlet-body">
+                    <div class="table-scrollable">
+                    <table class="table table-bordered table-hover table-striped" data-page-size="6" v-show="showTable">
+								<thead>
+									<tr>
+										<th>航司二字码</th>
+										<th>航司标志</th>
+										<th>航司名称</th>
+										<th>航司英文名称</th>
+										<th>国家代码</th>
+										<th>最短简称</th>
+										<th>航司官网地址</th>
+										<th>是否关闭</th>
+										<th>是否开通国际航班</th>
+										<th>供应商ID</th>
+										<th>操作人</th>
+										<th>最后修改时间</th>
+										<th>操作</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr v-for="item in infos.data">
+										<td v-html="item.airWaysCode"></td>
+										<td >
+											<span class="blog-img blog-tag-data"><img alt=""
+												:src="getUrl(item.logoUrl)" style="width:40px;height:40px" class=" img-responsive" /></span>
+										</td>
+										<td v-text="item.gbName"></td>
+										<td v-text="item.enName"></td>
+										<td v-text="item.countryCode"></td>
+										<td v-text="item.msName"></td>
+										<td v-text="item.acSiteUrl"></td>
+										<td v-text="item.enabled == 0? '关闭': '运行'"></td>
+										<td v-text="item.isInter==0?'未开通':'开通'"></td>
+										<td v-text="item.merchantId"></td>
+										<td v-text="item.operator"></td>
+										<td v-text="item.gmtModified | toDate 'YYYY-MM-DD'"></td>
+										<td>
+                                        <div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
+                                        #if($sec.isGranted('airWaysCode_edit'))
+                                        	<a v-on:click.prevent="edit(item.id)" class="green btn btn-xs " href="#" >编辑
+	                                			<i class="fa fa-fw fa-edit fa-lg"></i>
+	                            			</a>
+                                        #end
+                                       	#if($sec.isGranted('airWaysCode_isVaild'))
+                        				    <a v-if="item.enabled == 0" class="blue btn btn-xs " @click.prevent="enable(item.id)">开启
+                                            	<li class="glyphicon glyphicon-ok" title="开启" >
+                                            	</li>
+                                            </a>
+                                            <a v-if="item.enabled == 1" class="red btn btn-xs " @click.prevent="disable(item.id)">关闭
+                        						<li class="glyphicon glyphicon-remove" title="关闭" ></li>
+                        					</a>
+                        				#end
+                                        </div>
+			                    		</td>
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+										<td colspan="13"><vue-page :paginator="infos.paginator"
+												:size="20" :query="queryData"> </vue-page></td>
+									</tr>
+								</tfoot>
+							</table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div  class="modal fade" id="applicationModal" tabindex="-1"
+	role="dialog">
+	<div class="modal-dialog" role="document" style="width:1050px">
+		<div class="modal-content"></div>
+	</div>
+</div>
+<div class="modal fade" id="remarkModal" tabindex="-1" role="dialog" >
+   <div class="modal-dialog">
+      <div class="modal-content">
+			<div class="modal-header" id="pushForm">
+				<h4 class="modal-title" id="myModalLabel">发布信息概述</h4>
+			</div>
+			<form class="form-horizontal" id="logForm">
+			    <div class="modal-body">
+			        <div class="form-group">
+    					<div class="col-sm-12" >
+        					<textarea class="form-control" name="description" id="description" value="" type="text"></textarea>
+        				</div>
+            		</div>
+            		<div class="modal-footer">
+			            <button id="dialog-cancel" type="button" class="btn btn-warning" data-dismiss="modal">取消
+			            </button>
+			            <button id="dialog-submit" type="button" class="btn btn-success">同意
+			            </button>
+        			</div>
+            	</div>
+            </form>
+      </div>
+</div>
+
+<script type="text/javascript" src="${rc.contextPath}/js/configmng/airwayscode/list.js"></script>
+<style type="text/css">
+	.centerss {
+ 		margin: auto;
+ 		text-align: center;
+	}
+</style>

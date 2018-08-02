@@ -1,0 +1,84 @@
+#set($layout="layout/spa.vm")
+
+#set($currentPath = ${rc.contextPath} + "/domainweb")
+## Title
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal"
+            aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    <h4 class="modal-title" id="myModalLabel">${ref.title}</h4>
+</div>
+## Form
+<form id="modalForm" class="form-horizontal" >
+    <input type="hidden" id="action" value="${ref.action}" />
+    <input type="hidden" name="id" value="$!{domain.id}" />
+    <div class="modal-body">
+        <div class="form-group">
+            <div class="col-sm-12 control-group has-error">
+                <label class="control-label" for="inputError">
+					#if(${errorInfo}) ${errorInfo} #end </label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="domainName">域名</label>
+            <div class="col-sm-8">
+                <input class="form-control required" id="domainName" name="domainName" 
+                       type="text" value="$!{domain.domainName}" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="domainKey">域KEY</label>
+            <div class="col-sm-8">
+                <input class="form-control" id="domainKey" name="domainKey" 
+                       type="text" value="$!{domain.domainKey}" />
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="drmResource">DRM资源ID</label>
+            <div class="col-sm-8">
+                <input class="form-control" id="drmResource" name="drmResource" placeholder="com.ly.flight.refundmng" 
+                       type="text" value="$!{domain.drmResource}" />
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="drmAttribute">DRM资源属性</label>
+            <div class="col-sm-8">
+                <input class="form-control" id="drmAttribute" name="drmAttribute" placeholder="domain" 
+                       type="text" value="$!{domain.drmAttribute}" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="description">描述</label>
+            <div class="col-sm-8">
+                <input class="form-control" id="description" name="description"
+                       type="text" value="$!{domain.description}" />
+            </div>
+
+        </div>
+        <div class="form-group" style="display: none">
+			<label class="col-sm-3 control-label" for="enabled">状态</label>
+			<div class="col-sm-8">
+			<select id="select_id" class="filter-status form-control" name="enabled"  v-model="enabled" >
+				<option value="" >--请选择--</option>
+				<option value="1" >有效</option>
+				<option value="0" >无效</option>
+			</select>
+			</div>
+		</div>
+
+        <div class="modal-footer">
+            <button id="dialog-cancel" type="button" class="btn btn-warning" data-dismiss="modal">取消
+            </button>
+            <button id="dialog-submit" type="button" class="btn btn-success">确认
+            </button>
+        </div>
+    </div>
+</form>
+<script type="text/javascript" >
+	var enabled='$!{domain.enabled}';
+</script>
+<script type="text/javascript" src="${rc.contextPath}/js/configmng/domain/form.js"></script>

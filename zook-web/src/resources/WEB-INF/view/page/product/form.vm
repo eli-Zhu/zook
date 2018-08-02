@@ -1,0 +1,128 @@
+#set($layout="layout/spa.vm") #set($currentPath = ${rc.contextPath} +
+"/airwayscode") ## Title
+<div class="modal-header" id="airForm">
+	<button type="button" class="close" data-dismiss="modal"
+		aria-label="Close">
+		<span aria-hidden="true">&times;</span>
+	</button>
+	<h4 class="modal-title" id="myModalLabel">分众产品列表</h4>
+</div>
+## Form
+<form id="modalForm" class="form-horizontal">
+<div class="modal-body container-fluid " style="max-height: 700px;overflow-y: scroll;">
+ <input type="hidden" name="id" value="$!{airWays.id}" />
+	<div class="modal-body">
+		<div class="form-group">
+			<div class="col-sm-12 control-group has-error">
+				<label class="control-label" for="inputError">
+					#if(${errorInfo}) ${errorInfo} #end </label>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-2 control-label" for="airWaysCode">航空公司二字码</label>
+			<div class="col-sm-4">
+				<input class="form-control" id="airWaysCode" name="airWaysCode" type="text"
+					value="$!{airWays.airWaysCode}" />
+			</div>
+			<label class="col-lg-2 control-label" for="gbName">航空公司名称（如：中国国际航空公司）</label>
+			<div class="col-sm-4">
+				<input class="form-control" id="gbName" name="gbName"
+					type="text" value="$!{airWays.gbName}" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-2 control-label" for="enName">航空公司英文名称（如：Air China）</label>
+			<div class="col-sm-4">
+				<input class="form-control" id="enName" name="enName"
+					type="text" value="$!{airWays.enName}" />
+			</div>
+			<label class="col-lg-2 control-label" for="countryCode">国家代码（默认中国：CN）</label>
+			<div class="col-sm-4">
+				<input class="form-control" id="countryCode" name="countryCode"
+					type="text" value="$!{airWays.countryCode}" placeholder="CN"/>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-2 control-label" for="aitaCode">AITA代码（默认为0）</label>
+			<div class="col-sm-4">
+				<input class="form-control" id="aitaCode" name="aitaCode"
+					type="text" value="$!{airWays.aitaCode}" placeholder="0"/>
+			</div>
+			<label class="col-lg-2 control-label" for="logoUrl">航空公司标志路径(如：img/CA.gif)</label>
+			<div class="col-sm-4">
+				<input class="form-control" id="logoUrl" name="logoUrl"
+					type="text" value="$!{airWays.logoUrl}" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-2 control-label" for="shortName">航空公司短名称(如：中国国际航空)</label>
+			<div class="col-sm-4">
+				<input class="form-control" id="shortName" name="shortName"
+					type="text" value="$!{airWays.shortName}" />
+			</div>
+			<label class="col-lg-2 control-label" for="isInter">是否开通国际航班</label>
+			<div class="col-lg-4">
+				<select  class="filter-status form-control" name="isInter" v-model="form.isInter" >
+					<option v-bind:value="1" >开通</option>
+					<option v-bind:value="0" >未开通</option>
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-2 control-label" for="logoNameUrl">航空公司中文标志路径(如：img/CAName.gif)</label>
+			<div class="col-sm-4">
+				<input class="form-control" id="logoNameUrl" name="logoNameUrl"
+					type="text" value="$!{airWays.logoNameUrl}" />
+			</div>
+			<label class="col-lg-2 control-label" for="msName">航空公司最短简称(如：国航)</label>
+			<div class="col-sm-4">
+				<input class="form-control" id="msName" name="msName"
+					type="text" value="$!{airWays.msName}" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-2 control-label" for="acSiteUrl">航空公司官网地址</label>
+			<div class="col-sm-4">
+				<input class="form-control" id="acSiteUrl" name="acSiteUrl"
+					type="text" value="$!{airWays.acSiteUrl}" />
+			</div>
+			<label class="col-lg-2 control-label" for="acQqNum">航司QQ(多个,隔开)</label>
+			<div class="col-sm-4">
+				<input class="form-control" id="acQqNum" name="acQqNum"
+					type="text" value="$!{airWays.acQqNum}"  />
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-2 control-label" for="companyShortIntro">航司简介</label>
+			<div class="col-sm-10">
+				<div name="companyShortIntro" id="companyShortIntro" >$!{airWays.companyShortIntro}
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-2 control-label" for="companyIntro">航空公司介绍</label>
+			<div class="col-sm-10">
+				<div name="companyIntro" id="companyIntro" >$!{airWays.companyIntro}
+				</div>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<button id="dialog-cancel" type="button" class="btn btn-warning"
+				data-dismiss="modal">取消</button>
+			<button id="dialog-submit" type="button" class="btn btn-success">同意
+			</button>
+		</div>
+	</div>
+</div>
+</form>
+<script type="text/javascript" >
+	var formData = $!{formData};
+	if (!formData.isInter) {
+		formData.isInter = "1";
+	}
+</script>
+<script type="text/javascript" src="${rc.contextPath}/js/configmng/product/form.js"></script>
+
+
+
+

@@ -1,0 +1,134 @@
+<style type="text/css">
+	.form-horizontal .form-group {
+	  margin-right: 11px;
+	}
+</style>
+#set($layout="layout/spa.vm") #set($currentPath = ${rc.contextPath} +
+"/cabincode") ## Title
+<div class="modal-header" id="cabinForm">
+	<button type="button" class="close" data-dismiss="modal"
+		aria-label="Close">
+		<span aria-hidden="true">&times;</span>
+	</button>
+	<h4 class="modal-title" id="myModalLabel">舱位信息维护</h4>
+</div>
+## Form
+<form id="modalForm" class="form-horizontal">
+<div class="modal-body container-fluid " >
+ <input type="hidden" name="id" value="$!{formData.id}" />
+	<div class="modal-body">
+		<div class="form-group">
+			<div class="col-sm-12 control-group has-error">
+				<label class="control-label" for="inputError">
+					#if(${errorInfo}) ${errorInfo} #end </label>
+			</div>
+		</div>
+		<div class="form-inline">
+			<div class="form-group col-lg-6">
+				<label class="col-lg-4 control-label" for="airWaysCode">航空公司</label>
+				<div class="col-sm-8">
+					<select id="select_id" class="filter-status form-control" name="airWaysCode" v-model="formData.airWaysCode" style="width:285px">
+						<option value="" >--请选择航空公司--</option>
+						<option v-for="item in airwayscodeList" value="{{item.airWaysCode}}"  >{{item.airWaysCode}}--{{item.gbName}}</option>
+					</select>	
+				</div>
+			</div>
+			<div class="form-group col-lg-6">
+				<label class="col-lg-4 control-label" for="cabinCode">舱位</label>
+				<div class="col-sm-8">
+					<input class="form-control" id="cabinCode" name="cabinCode"
+						type="text" v-model="formData.cabinCode" style="width:285px"/>
+				</div>
+			</div>
+		</div>
+		<div class="form-group"></div>
+		<div class="form-group">
+			<label class="col-lg-2 control-label" for="accBaseCabinCode">基准仓</label>
+			<div class="col-sm-5" style="padding-left:0">
+				<div class="col-sm-4">
+					<input class="form-control" id="accBaseCabinCode" name="accBaseCabinCode"
+						type="text" v-model="formData.accBaseCabinCode" />
+				</div>
+				<label class="col-lg-2 control-label" for="accBaseCabinCodeType">类型</label>
+				<div class="col-sm-4">
+					<select  class="filter-status form-control" id="accBaseCabinCodeType" name="accBaseCabinCodeType" v-model="formData.accBaseCabinCodeType" >
+						<option value="1" >经济舱</option>
+						<option value="2" >商务舱</option>
+						<option value="3" >头等舱</option>
+					</select>
+				</div>
+			</div>
+			<label class="col-lg-1 control-label" for="isSpecialCabin">是否特价舱位</label>
+			<div class="col-sm-4">
+				<select  class="filter-status form-control" id ="isSpecialCabin" name="isSpecialCabin" v-model="formData.isSpecialCabin" >
+					<option value="1" >是</option>
+					<option value="0" >否</option>
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-2 control-label" for="accCabinSpecailName">特殊舱位名称</label>
+			<div class="col-sm-4">
+				<input class="form-control" id="accCabinSpecailName" name="accCabinSpecailName"
+					type="text"  v-model="formData.accCabinSpecailName"/>
+			</div>
+			<label class="col-lg-2 control-label" for="accType">舱位类型</label>
+			<div class="col-sm-4">
+				<select  class="filter-status form-control" id="accType" name="accType" v-model="formData.accType" >
+					<option value="0" >单程</option>
+					<option value="1" >中转飞机舱位</option>
+					<option value="2" >中转高铁舱位</option>
+					<option value="3" >中转大巴舱位</option>
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-2 control-label" for="startDate">有效期（起）</label>
+			<div class="col-lg-4">
+				<input type="text" class="form-control" data-date-format="yyyy-mm-dd " id="startDate" v-model="formData.startDate" name="startDate"  placeholder="请输入开始时间">
+			</div>
+			<label class="col-lg-2 control-label" for="endDate">有效期（止）</label>
+			<div class="col-sm-4">
+				<input type="text" class="form-control" data-date-format="yyyy-mm-dd " id="endDate" v-model="formData.endDate" name="endDate"  placeholder="请输入结束时间">
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-2 control-label" for="accIsOffical">是否官网独有舱位</label>
+			<div class="col-sm-4">
+				<select  class="filter-status form-control" id="accIsOffical" name="accIsOffical" v-model="formData.accIsOffical" >
+					<option value="1" >是</option>
+					<option value="0" >否</option>
+				</select>
+			</div>
+			<label class="col-lg-2 control-label" for="accIsPrivateCabin">是否私有</label>
+			<div class="col-sm-4">
+				<select  class="filter-status form-control" id="accIsPrivateCabin" name="accIsPrivateCabin" v-model="formData.accIsPrivateCabin" >
+					<option value="1" >是</option>
+					<option value="0" >否</option>
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-2 control-label" for="accSortRebate">舱位折扣</label>
+			<div class="col-sm-4">
+				<input class="form-control" id="accSortRebate" name="accSortRebate"
+					type="text"  v-model="formData.accSortRebate"/>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<button id="dialog-cancel" type="button" class="btn btn-warning"
+				data-dismiss="modal">取消</button>
+			<button id="dialog-submit" type="button" class="btn btn-success">同意
+			</button>
+		</div>
+	</div>
+</div>
+</form>
+<script type="text/javascript" >
+	var formData = $!{formData};
+</script>
+<script type="text/javascript" src="${rc.contextPath}/js/configmng/cabincode/form.js"></script>
+
+
+
+

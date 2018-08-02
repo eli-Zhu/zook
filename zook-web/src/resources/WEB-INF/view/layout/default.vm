@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="_csrf" content="${_csrf.token}"/>
+    <meta name="_csrf_header" content="${_csrf.headerName}"/>
+
+    <title>机票配置中心</title>
+
+    #parse("widget/css-loader.vm")
+
+    <script src="${rc.contextPath}/js/plugins/jquery-1.12.2.min.js"></script>
+    <script src="${rc.contextPath}/js/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript">
+        var __ctx = "${rc.contextPath}";
+        var csrfHeader = {'${_csrf.headerName}': '${_csrf.token}'};
+        jQuery.ajaxSetup({
+            headers: csrfHeader,
+            error : function(err) {
+                toastr.error(err, '', {timeOut: 3000, positionClass: "toast-top-center"});
+            }
+        });
+        
+        $(document).ajaxError(function(event, xhr, options){
+            try{
+                var returnMsg = xhr.responseText;
+                var returnObj = JSON.parse(returnMsg);
+
+               if(returnObj.code=='LY0500102003'){
+                    toastr.error(returnObj.message + '请刷新页面', '', { timeOut: 3000, positionClass: "toast-top-center"});
+                }
+               if(returnObj.code=='LY0500102007'){
+                   window.location.href = __ctx;    
+                }
+            }catch(e){ }
+        });
+    </script>
+    <style type="text/css">
+        .popover{
+            max-width: 100%;
+        }
+    </style>
+
+</head>
+
+<body class="page-header-menu-fixed">
+<div class="page-header">
+    <div class="page-header-top">
+        <div class="container-fluid">
+            <!-- BEGIN LOGO -->
+            <div class="page-logo">
+                <a href='${rc.contextPath}/dictweb/list'><img src="${rc.contextPath}/img/2015129100342.png" style="margin-top: 0px" alt="logo" class="logo-default"></a>
+            </div>
+            <!-- END LOGO -->
+
+            <div class="top-menu">
+                #parse("widget/top-menu.vm")
+            </div>
+        </div>
+    </div>
+
+    <div class="page-header-menu">
+        <div class="container-fluid">
+            <div class="hor-menu ">
+                #parse("widget/header-menu.vm")
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<div class="page-container">
+    $screen_content
+</div>
+
+<div class="page-footer">
+    <div class="container">
+        #parse("widget/footer.vm")
+    </div>
+</div>
+
+<!-- JS Begin -->
+    #parse("widget/js-loader.vm")
+<!-- End of JS -->
+</body>
+</html>

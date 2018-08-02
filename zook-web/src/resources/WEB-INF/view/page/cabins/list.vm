@@ -1,0 +1,188 @@
+<style type="text/css">
+[v-cloak] {
+  display: none;
+}
+</style>
+<!-- CONTENT -->
+#set($currentPath = ${rc.contextPath} + "/cabincode")
+<div class="page-content" id="cabinVue">
+    <div class="container-fluid">
+        <vue-breadcrumb first-name="舱位信息维护" node="node"></vue-breadcrumb>
+        <div class="row">
+            <div id="rulePage" class="col-ms-12">
+                <div class="portlet light bordered">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="icon-equalizer font-red-sunglo"></i>
+                            <span class="caption-subject font-red-sunglo bold uppercase">舱位信息维护</span>
+                            <span class="caption-helper"></span>
+                        </div>
+                        <div class="tools">
+                            <a href="" class="collapse">
+                            </a>
+                            <a href="#portlet-config" data-toggle="modal" class="config">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portlet-body form">
+							<form class="form-horizontal" role="form" v-on:submit.prevent="queryData" id="myForm" action="${currentPath}/list?m=1" method="post">
+								<div class="button-group"></div>
+								<div class="form-group ">
+									<label class="col-sm-1 control-label" for="airWaysCode">航空公司</label>
+									<div class="col-lg-3">
+										<select  class="filter-status form-control" name="airWaysCode" v-model="node.airWaysCode">
+											<option value="" >--请选择--</option>
+											<option v-for="item in airwayscodeList" value="{{item.airWaysCode}}"  >{{item.airWaysCode}}--{{item.gbName}}</option>
+										</select>									
+									</div>
+									<label class="col-sm-1 control-label" for="accBaseCabinCodeType">基准舱位</label>
+									<div class="col-lg-3">
+									<select class="filter-status form-control" id="accBaseCabinCodeType" name="accBaseCabinCodeType" v-model="node.accBaseCabinCodeType" >
+										<option value="" >--请选择--</option>
+										<option value="1" >经济舱</option>
+										<option value="2" >商务舱</option>
+										<option value="3" >头等舱</option>
+									</select>
+									</div>
+									<label class="col-sm-1 control-label" for="validity">日期</label>
+					            	<div class="col-lg-3">
+					                	<input type="text" class="form-control" data-date-format="yyyy-mm-dd" id="validity" v-model="node.validity" name="validity"  placeholder="请输入日期">
+					            	</div>
+				            	</div>
+				            	<div class="form-group ">
+					            	<label class="col-sm-1 control-label" for="accType">类型</label>
+									<div class="col-lg-3">
+									<select  class="filter-status form-control" id="accType" name="accType" v-model="node.accType" >
+										<option value="" >--请选择--</option>
+										<option value="0" >单程</option>
+										<option value="1" >中转飞机舱位</option>
+										<option value="2" >中转高铁舱位</option>
+										<option value="3" >中转大巴舱位</option>
+									</select>
+									</div>
+									<label class="col-sm-1 control-label" for="enabled">状态</label>
+									<div class="col-lg-3">
+									<select class="filter-status form-control" id="enabled" name="enabled" v-model="node.enabled" >
+										<option value=""selected >--请选择--</option>
+										<option value="1" >运行</option>
+										<option value="0" >关闭</option>
+									</select>
+									</div>
+								</div>
+							</form>
+								<div class="button-group centerss"  >
+								#if($sec.isGranted('cabinsCode_search'))
+									<button type="submit" v-on:click.prevent="search()" class="btn btn-success" > 
+										<i class="fa fa-fw fa-search fa-lg"></i>搜索
+									</button>
+								#end
+								#if($sec.isGranted('cabinsCode_create'))
+									<button type="buttion" v-on:click.prevent="create()"  id="create" class="btn btn-success" >
+										<span class="glyphicon glyphicon-plus"></span>新增
+									</button>
+								#end
+									<button type="reset" v-on:click.prevent="reset()" id="reset" class="btn btn-success"><span class="glyphicon glyphicon-refresh"></span>重置</button>
+								</div>
+							<HR style="border:1 dashed #987cb9" width="98%" color=#987cb9 SIZE=1>
+							
+					</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="portlet light">
+                <div class="portlet-body">
+                    <div class="table-scrollable">
+                    <table class="table table-bordered table-hover table-striped" data-page-size="6" v-show="showTable">
+								<thead>
+									<tr>
+										<th>基准舱位</th>
+										<th>代码</th>
+										<th>价格类型</th>
+										<th>有效期</th>
+										<th>是否私有</th>
+										<th>是否官网独有舱位</th>
+										<th>状态</th>
+										<th>操作</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr v-for="item in infos.data">
+										<td >
+											<div v-cloak>
+												{{item.accBaseCabinCode}}<br/> {{cabinCodeTypeConverter(item.accBaseCabinCodeType)}}
+											</div>
+										</td>
+										<td v-text="item.cabinCode"></td>
+										<td ">
+											<div v-cloak>
+												{{isSpecialCabin(item.isSpecialCabin)}}<br/>{{accType(item.accType)}}
+											</div>
+										</td>
+										<td v-cloak>
+											{{item.startDate| toDate 'YYYY-MM-DD'}}<br/>{{item.endDate| toDate 'YYYY-MM-DD'}}
+										</td>
+										<td v-text="item.accIsPrivateCabin==1?'是':'否'"></td>
+										<td v-text="item.accIsOffical == 1? '是': '否'"></td>
+										<td v-text="item.enabled == 1? '运行': '关闭'"></td>
+										<td>
+                                        	<div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
+                                        	#if($sec.isGranted('cabinsCode_edit'))
+                                        	<a v-on:click.prevent="edit(item.id)" class="green btn btn-xs " href="#" >编辑
+                                            	<li  class="fa fa-fw fa-edit fa-lg"></li>
+                                            </a>
+                                            #end
+                                            #if($sec.isGranted('cabinsCode_changeInfo'))
+                                            <a v-on:click.prevent="read(item.id)" class="yellow btn btn-xs " href="#" >操作日志
+                                            	<li  class="glyphicon glyphicon-tasks"></li>
+                                            </a>
+                                            #end
+                                            #if($sec.isGranted('cabinsCode_isVaild'))
+                        				    	<a v-if="item.enabled == 0" class="blue btn btn-xs " @click.prevent="enable(item.id)">开启
+                                            		<li class="glyphicon glyphicon-ok" title="开启" >
+                                            		</li>
+                                            	</a>
+                                            	<a v-if="item.enabled == 1" class="red btn btn-xs "  @click.prevent="disable(item.id)">关闭
+                        							<li class="glyphicon glyphicon-remove" title="关闭" ></li>
+                        						</a>
+                        					#end
+                                        	</div>
+			                    		</td>
+									</tr>
+								</tbody>
+								<tfoot>
+									<tr>
+										<td colspan="12"><vue-page :paginator="infos.paginator"
+												:size="20" :query="queryData"> </vue-page></td>
+									</tr>
+								</tfoot>
+							</table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div  class="modal fade" id="applicationModal" tabindex="-1"
+	role="dialog">
+	<div class="modal-dialog" role="document" style="width:1000px">
+		<div class="modal-content"></div>
+	</div>
+</div>
+<div  class="modal fade" id="logModal" tabindex="-1"
+	role="dialog">
+	<div class="modal-dialog" role="document" style="width:1000px">
+		<div class="modal-content"></div>
+	</div>
+</div>
+
+
+<script type="text/javascript" src="${rc.contextPath}/js/configmng/cabincode/list.js"></script>
+<style type="text/css">
+	.centerss {
+ 		margin: auto;
+ 		text-align: center;
+	}
+</style>

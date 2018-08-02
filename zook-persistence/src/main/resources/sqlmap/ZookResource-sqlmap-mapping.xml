@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.zook.persistence.daointerface.ZookResourceDAO">
+
+    
+    <resultMap id="BaseResultMap" type="com.zook.persistence.dataobject.ZookResourceDO">
+		<result property="id" column="id" javaType="long" jdbcType="BIGINT"   />
+		<result property="domainId" column="domain_id" javaType="long" jdbcType="BIGINT"   />
+		<result property="resourceName" column="resource_name" javaType="java.lang.String" jdbcType="VARCHAR"  />
+		<result property="resourcePath" column="resource_path" javaType="java.lang.String" jdbcType="VARCHAR"  />
+		<result property="resourceValue" column="resource_value" javaType="java.lang.String" jdbcType="VARCHAR"  />
+		<result property="isValid" column="is_valid" javaType="java.lang.String" jdbcType="VARCHAR"  />
+		<result property="remark" column="remark" javaType="java.lang.String" jdbcType="VARCHAR"  />
+		<result property="createTime" column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP"  />
+		<result property="updateTime" column="update_time" javaType="java.util.Date" jdbcType="TIMESTAMP"  />
+		<result property="operator" column="operator" javaType="java.lang.String" jdbcType="VARCHAR"  />
+    </resultMap>
+
+	<sql id="Base_Column_List" >
+		id,domain_id,resource_name,resource_path,resource_value,is_valid,remark,create_time,update_time,operator
+	</sql>
+	
+	<select id="findById" resultMap="BaseResultMap" >
+    	select   <include refid="Base_Column_List" />  from ZOOK_RESOURCE where id = #{id} and is_valid = '1'
+	</select>	
+
+	    
+	
+	
+    
+	
+	<select id="findByDomainId" resultMap="BaseResultMap" >
+    	select   <include refid="Base_Column_List" />  from ZOOK_RESOURCE where domain_id = #{domainId} and is_valid =
+			'1'
+	</select>	
+
+	    
+	
+	
+    
+	
+	<select id="findByPath" resultMap="BaseResultMap" >
+    	select   <include refid="Base_Column_List" />  from ZOOK_RESOURCE where resource_path = #{resourcePath} and
+			is_valid = '1'
+	</select>	
+
+	    
+	
+	
+    
+	
+	<select id="findAll" resultMap="BaseResultMap" >
+    	select   <include refid="Base_Column_List" />  from ZOOK_RESOURCE where is_valid = '1'
+	</select>	
+
+	    
+	
+	
+    
+	
+	<select id="resourcePage" resultMap="BaseResultMap" >
+    	select   <include refid="Base_Column_List" /> 	from ZOOK_RESOURCE
+			where
+			domain_id = #{domainId}
+			and is_valid = '1'
+		<if test="resource_name!=null">
+			AND resource_name like #{resourceName}
+		</if>
+		<if test="resource_path!=null">
+			AND resource_path like #{resourcePath}
+		</if>
+	</select>
+
+	<select id="resourcePage.count" resultMap="long" >
+    	select   count(*) 	from ZOOK_RESOURCE
+			where
+			domain_id = #{domainId}
+			and is_valid = '1'
+		<if test="resource_name!=null">
+			AND resource_name like #{resourceName}
+		</if>
+		<if test="resource_path!=null">
+			AND resource_path like #{resourcePath}
+		</if>
+	</select>
+	    
+	
+	
+    
+	
+	<update id="deleteById">
+		update ZOOK_RESOURCE set is_valid = '0',update_time = CURRENT_TIMESTAMP
+			where id = #{id} and is_valid = '1'
+	</update>
+	
+    
+	
+	<update id="deleteByDomainId">
+		update ZOOK_RESOURCE set is_valid = '0',update_time = CURRENT_TIMESTAMP
+			where domain_id = #{domainId} and is_valid = '1'
+	</update>
+	
+    
+	
+	<update id="update">
+		update ZOOK_RESOURCE set resource_value =#{resourceValue},resource_name
+			=#{resourceName},resource_path = #{resourcePath},remark
+			=#{remark},update_time = CURRENT_TIMESTAMP
+			where is_valid = '1' and id = #{id}
+	</update>
+	
+    
+	
+	
+    
+	<insert id="insert">
+		insert into
+			ZOOK_RESOURCE(
+			domain_id,
+			resource_name,
+			resource_path,
+			resource_value,
+			remark,
+			is_valid,
+			create_time,
+			update_time,
+			operator
+			)
+			values(#{domainId},#{resourceName#},#{resourcePath},#{resourceValue},#{remark},#{isValid},CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,#{operator})
+
+	</insert>
+
+</mapper>
+

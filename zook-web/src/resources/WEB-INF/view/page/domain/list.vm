@@ -1,0 +1,142 @@
+<!-- CONTENT -->
+#set($currentPath = ${rc.contextPath} + "/domainweb")
+<div class="page-content" id="myGrid">
+    <div class="container-fluid">
+        <vue-breadcrumb first-name="域配置" node="node"></vue-breadcrumb>
+        <div class="row">
+            <div id="domainDiv" class="col-ms-12">
+                <div class="portlet light bordered">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <i class="icon-equalizer font-red-sunglo"></i>
+                            <span class="caption-subject font-red-sunglo bold uppercase">域查询</span>
+                            <span class="caption-helper"></span>
+                        </div>
+                        <div class="tools">
+                            <a href="" class="collapse">
+                            </a>
+                            <a href="#portlet-config" data-toggle="modal" class="config">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portlet-body form">
+            	    	<form class="form-horizontal" role="form" v-on:submit.prevent="queryData" id="query" action="${currentPath}/list?m=1" method="post">
+            	            <div class="form-group text-center">
+            	                <label class="col-sm-1 control-label" for="domainName">域名</label>
+            	                <div class="col-sm-3">
+            	                    <input class="form-control" id="domainName" name="domainName" v-model="parms.domainName" type="text" placeholder="请输入域信息"/>
+            	                </div>
+            	                <label class="col-sm-1 control-label" for="domainKey">域KEY</label>
+            	                <div class="col-sm-3">
+            	                    <input class="form-control" id="domainKey" name="domainKey" v-model="parms.domainKey" type="text" placeholder="请输入域KEY" />
+            	                </div>
+                                <label class="col-sm-1 control-label" for="enabled">状态</label>
+                                <div class="col-lg-3">
+                                    <select  class="filter-status form-control" v-model="parms.enabled" name="enabled">
+                                        <option value="" selected >--请选择--</option>
+                                        <option value="1" >有效</option>
+                                        <option value="0" >无效</option>
+                                    </select>
+                                </div>
+                           </div>
+                           <div class="form-group text-center">
+	        	            	<label class="col-sm-1 control-label" >修改时间</label>
+	                            <div class="col-lg-3">
+	                                <div class="input-group date-picker input-daterange" >
+	                                    <input type="text" class="form-control" name="createTimeStart" v-model="parms.createTimeStart"  placeholder="请输入开始时间">
+	                                                <span class="input-group-addon">到 </span>
+	                                    <input type="text" class="form-control" name="createTimeEnd" v-model="parms.createTimeEnd"  placeholder="请输入结束时间">
+	                                </div>
+	                            </div>
+            	            </div>
+            	        </form>
+                        <div class="button-group centerss">
+                        #if($sec.isGranted('domain_create'))
+                            <button type="buttion" v-on:click="create"  id="create" data-value="${currentPath}/create" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span>新增</button>
+                        #end
+                        #if($sec.isGranted('domain_search'))
+                            <button type="buttion" v-on:click="queryData" class="btn btn-success"><i class="fa fa-fw fa-search fa-lg"></i>搜索</button>
+                        #end
+            	            <button type="reset" v-on:click="reset" id="flush" class="btn btn-success"><span class="glyphicon glyphicon-refresh"></span>重置</button>
+                        </div>
+                        <HR style="border:1 dashed #987cb9" width="98%" color=#987cb9 SIZE=1>
+                        </div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="portlet light">
+                <div class="portlet-body">
+                    <div class="table-scrollable">
+	        <table class="table table-bordered table-hover table-striped" data-page-size="6">
+	            <thead>
+	            <tr>
+	                <th>域名</th>
+	                <th>域KEY</th>
+	                <th>描述</th>
+	                <th>状态</th>
+	                <th>操作人</th>
+	                <th>修改时间</th>
+	                <th>操作</th>
+	            </tr>
+	            </thead>
+	            <tbody>
+	                <tr v-for="item in infos.data">
+	                <td v-html="item.domainName"></td>
+	                <td v-html="item.domainKey"></td>
+	                <td v-html="item.description"></td>
+	                <td v-html="item.enabled == 0? '无效': '有效'"></td>
+	                <td v-html="item.operator"></td>
+	                <td v-html="item.gmtModified | toDate 'YYYY-MM-DD'"></td>
+	                    <td>
+	                        <div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
+                            #if($sec.isGranted('domain_edit'))
+	                            <a v-on:click.prevent="edit(item.id)" class="green btn btn-xs " href="#" >编辑
+	                                <i class="fa fa-fw fa-edit fa-lg"></i>
+	                            </a>
+                            #end
+                            #if($sec.isGranted('domain_isVaild'))
+              				    <a v-if="item.enabled == 0"class="blue btn btn-xs "@click.prevent="enable(item.id)">开启
+                                    <li class="glyphicon glyphicon-ok" title="开启" >
+                                    </li>
+                                </a>
+                                <a v-if="item.enabled == 1"class="red btn btn-xs "  @click.prevent="disable(item.id)">关闭
+                						<li class="glyphicon glyphicon-remove" title="关闭"></li>
+                				</a>
+                            #end
+	                        </div>
+	                    </td>
+	                </tr>
+	            </tbody>
+	            <tfoot>
+	            <tr>
+	               	 <td colspan="10">
+	                     <vue-page :paginator="infos.paginator" :size="20" :query="queryData"> </vue-page>
+	                </td>
+	           	</tr>
+	            </tfoot>
+	        </table>
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="applicationModal" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content"></div>
+    </div>
+</div>
+<script type="text/javascript" src="${rc.contextPath}/js/configmng/domain/list.js"></script>
+<style type="text/css">
+    .centerss {
+        margin: auto;
+        text-align: center;
+    }
+</style>

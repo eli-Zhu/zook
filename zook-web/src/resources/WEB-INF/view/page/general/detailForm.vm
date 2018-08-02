@@ -1,0 +1,211 @@
+#set($layout="layout/spa.vm") #set($currentPath = ${rc.contextPath} +
+"/general") ## Title
+<div class="modal-header" id="detailForm">
+	<button type="button" class="close" data-dismiss="modal"
+		aria-label="Close">
+		<span aria-hidden="true">&times;</span>
+	</button>
+	<h4 class="modal-title" id="myModalLabel">自定义配置</h4>
+</div>
+## Form
+<form id="modalForm" class="form-horizontal">
+<div class="modal-body container-fluid " >
+ <input type="hidden" name="id" value="$!{formData.id}" />
+	<div class="modal-body">
+		<div class="form-group">
+			<div class="col-sm-12 control-group has-error">
+				<label class="control-label" for="inputError">
+					#if(${errorInfo}) ${errorInfo} #end </label>
+			</div>
+        </div>
+        <div class="form-group">
+			<label class="col-lg-2 control-label" for="colName">数据库列名</label>
+			<div class="col-sm-3">
+				<input class="form-control" id="colName" name="colName" type="text" v-model="form.colName"/>
+			</div>
+
+			<label class="col-lg-2 control-label" for="colDisplayName">显示名</label>
+			<div class="col-sm-3">
+				<input class="form-control" id="colDisplayName" name="colDisplayName" type="text" v-model="form.colDisplayName" />
+			</div>
+        </div>
+        <div class="form-group">
+			<label class="col-lg-2 control-label" for="databaseType">字段类别</label>
+			<div class="col-sm-3">
+				<select id="select_id" class="filter-status form-control" name="databaseType"  v-model="form.databaseType" >
+					<option v-for="item in databaseTypeList" value="{{item}}"  >{{item}}</option>
+				</select>			
+			</div>
+            <label class="col-lg-2 control-label" for="rank">顺序</label>
+            <div class="col-sm-3">
+                <input class="form-control" id="rank" name="rank" type="text" v-model="form.rank" />
+            </div>
+		</div>
+
+		<div class="form-group">
+			<label class="col-lg-2 control-label" for="canSearch">是否作为查询条件</label>
+			<div class="col-sm-3" >
+                <div class="icheck-inline">
+                    <template v-for="item in canSearch" >
+                        <label>
+                            <input type="checkbox" class="icheck" v-bind:true-value="item.value" name="canSearch" v-model="form.canSearch" value="{{item.value}}">{{item.text}}
+                        </label>
+                    </template>
+                </div>
+			</div>
+
+            <label class="col-sm-2 control-label" for="showDescription" >是否显示说明文字</label>
+            <div class="col-sm-3" >
+                <div class="icheck-inline">
+                    <template v-for="item in showDescription" >
+                        <label>
+                            <input type="checkbox" class="icheck" v-bind:true-value="item.value" name="showDescription" v-model="form.showDescription" value="{{item.value}}">{{item.text}}
+                        </label>
+                    </template>
+                </div>            
+             </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="canNull" >是否可以为空</label>
+            <div class="col-sm-3" >
+                <div class="icheck-inline">
+                    <template v-for="item in canNull" >
+                        <label>
+                            <input type="checkbox" class="icheck" v-bind:true-value="item.value" name="canNull" v-model="form.canNull" value="{{item.value}}">{{item.text}}
+                        </label>
+                    </template>
+                </div>            
+            </div>
+
+            <label class="col-sm-2 control-label" for="showInTable" >是否在列表中显示</label>
+            <div class="col-sm-3" >
+                <div class="icheck-inline">
+                    <template v-for="item in showInTable" >
+                        <label>
+                            <input type="checkbox" class="icheck" v-bind:true-value="item.value" name="showInTable" v-model="form.showInTable" value="{{item.value}}">{{item.text}}
+                        </label>
+                    </template>
+                </div>            
+             </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="notisPrimaryKeyice" >是否主键</label>
+            <div class="col-sm-3" >
+                <div class="icheck-inline">
+                    <template v-for="item in notisPrimaryKeyice" >
+                        <label>
+                            <input type="checkbox" class="icheck" v-bind:true-value="item.value" name="isPrimaryKey" v-model="form.isPrimaryKey" value="{{item.value}}">{{item.text}}
+                        </label>
+                    </template>
+                </div>            
+             </div>
+            <label class="col-sm-2 control-label" for="saveLog" >是否保存日志</label>
+            <div class="col-sm-3" >
+                <div class="icheck-inline">
+                    <template v-for="item in saveLog" >
+                        <label>
+                            <input type="checkbox" class="icheck" v-bind:true-value="item.value" name="isSaveLog" v-model="form.isSaveLog" value="{{item.value}}">{{item.text}}
+                        </label>
+                    </template>
+                </div>            
+             </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="onlyOne" >是否唯一</label>
+            <div class="col-sm-3" >
+                <div class="icheck-inline">
+                    <template v-for="item in onlyOne" >
+                        <label>
+                            <input type="checkbox" class="icheck" v-bind:true-value="item.value" name="isCheckOnly" v-model="form.isCheckOnly" value="{{item.value}}">{{item.text}}
+                        </label>
+                    </template>
+                </div>            
+             </div>
+            <label class="col-sm-2 control-label" for="length" >字段长度</label>
+            <div class="col-sm-3" >
+                <input class="form-control" id="search-takeOffEndDate" name="length"  v-model="form.length" type="text"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-2 control-label" for="widgetType">控件类别</label>
+            <div class="col-sm-3">
+                <select id="select_id" class="filter-status form-control" name="widgetType"  v-model="form.widgetType" >
+                    <option v-for="item in widgetTypeList" value="{{item}}"  >{{item}}</option>
+                </select>           
+            </div>
+            <label class="col-sm-2 control-label" for="notice" >描述</label>
+            <div class="col-sm-3" >
+                <textarea class="form-control" id="search-takeOffEndDate" name="description"  v-model="form.description" type="text"/>
+            </div>
+        </div>
+        <div v-show="otherTables">
+            <div class="form-group" >
+                <label class="col-lg-2 control-label" for="dicId">关联信息</label>
+                <div class="col-sm-3" v-show="dictValue">
+                    <select class="filter-status form-control" name="dicId"  v-model="form.dicId" >
+                        <option value="">==请选择==</option>
+                        <option v-for="item in dictTreeList" value="{{item.id}}"  >{{item.itemKey}}</option>
+                    </select>   
+                </div>
+                <div class="col-sm-3" v-show="tableValue">
+                    <select  class="filter-status form-control" name="valueLinkTo"  v-model="form.valueLinkTo" >
+                        <option value="">==请选择==</option>
+                        <option v-for="item in pageList" value="{{item.tableName}}"  >{{item.pageTitle}}</option>
+                    </select>   
+                </div>
+                <label v-show="batchTittle" class="col-lg-2 control-label" >批量新增选择</label>
+                <div class="col-sm-3" v-show="batch">
+                    <select  class="filter-status form-control" name="isMultiple"  v-model="form.isMultiple" >
+                        <option value="1" >一键增加多条</option>
+                        <option value="0" >一键增加单条</option>
+                    </select>   
+                </div>
+            </div>
+            <div class="form-group">
+                <div v-show="colText">
+                    <label class="col-lg-2 control-label" for="optionCol">显示列名一</label>
+                    <div class="col-sm-2" id="optionColFir">
+                        <select  class="filter-status form-control" name="optionColFir"  v-model="form.optionColFir" >
+                            <option value="">==请选择==</option>
+                            <option v-for="item in colList" value="{{item.colName}}"  >{{item.colDisplayName}}</option>
+                        </select> 
+                    </div>
+                    <label class="col-lg-1 control-label" for="optionCol">列名二</label>
+                    <div class="col-sm-2" >
+    					<select id="select_id" class="filter-status form-control" name="optionColSec"  v-model="form.optionColSec" >
+                            <option value="">==请选择==</option>
+                            <option v-for="item in colList" value="{{item.colName}}"  >{{item.colDisplayName}}</option>
+                        </select> 
+                    </div>
+                </div>
+                <div v-show="colValue">
+                    <label class="col-lg-1 control-label" for="optionValueCol">值列名</label>
+                    <div class="col-sm-2" >
+                        <select id="select_id" class="filter-status form-control" name="optionValueCol"  v-model="form.optionValueCol" >
+                            <option value="">==请选择==</option>
+                            <option v-for="item in colList" value="{{item.colName}}"  >{{item.colDisplayName}}</option>
+                        </select>   
+                    </div>
+                </div>
+            </div>
+        </div>
+		<div class="modal-footer">
+			<button id="dialog-cancel" type="button" class="btn btn-warning"
+				data-dismiss="modal">取消</button>
+			<button id="dialog-submit" type="button" class="btn btn-success">同意
+			</button>
+		</div>
+	</div>
+</div>
+</form>
+<script type="text/javascript" >
+	var detail = $!{detail};
+    var dictTreeList=$!{dictTreeList};
+    var pageList=$!{pageList};
+    var colList=$!{colList};
+</script>
+<script type="text/javascript" src="${rc.contextPath}/js/configmng/general/detailForm.js"></script>
+
+
+
+

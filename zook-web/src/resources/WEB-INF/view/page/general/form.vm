@@ -1,0 +1,85 @@
+#set($layout="layout/spa.vm") #set($currentPath = ${rc.contextPath} +
+"/general") ## Title
+<div class="modal-header" id="airForm">
+	<button type="button" class="close" data-dismiss="modal"
+		aria-label="Close">
+		<span aria-hidden="true">&times;</span>
+	</button>
+	<h4 class="modal-title" id="myModalLabel">自定义配置</h4>
+</div>
+## Form
+<form id="modalForm" class="form-horizontal">
+<div class="modal-body container-fluid " >
+ <input type="hidden" name="id" value="$!{formData.id}" />
+	<div class="modal-body">
+		<div class="form-group">
+			<div class="col-sm-12 control-group has-error">
+				<label class="control-label" for="inputError">
+					#if(${errorInfo}) ${errorInfo} #end </label>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-2 control-label" for="defName">名称</label>
+			<div class="col-sm-6">
+				<input class="form-control" id="defName" name="defName" type="text" v-model="form.defName"/>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-2 control-label" for="pageTitle">页面名称</label>
+			<div class="col-sm-6">
+				<input class="form-control" id="pageTitle" name="pageTitle" type="text" v-model="form.pageTitle" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-2 control-label" for="pageKey">页面KEY</label>
+			<div class="col-sm-6">
+				<input class="form-control" id="pageKey" name="pageKey" type="text" v-model="form.pageKey" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-2 control-label" for="tableName">表名</label>
+			<div class="col-sm-6">
+				<input class="form-control" id="tableName" name="tableName" type="text" v-model="form.tableName"/>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-2 control-label" for="defType">所属域</label>
+			<div class="col-sm-6">
+				<input class="form-control select2" id="defType" name="defType" type="text" v-model="form.defType" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-lg-2 control-label" for="isCache">是否缓存</label>
+			<div class="col-sm-6" >
+                <div class="icheck-inline">
+                    <template v-for="item in isCache" >
+                        <label>
+                            <input type="checkbox" class="icheck" v-bind:true-value="item.value" name="policyTypeList" v-model="form.isCache" value="{{item.value}}">{{item.text}}
+                        </label>
+                    </template>
+                </div>
+			</div>
+		</div>
+		<div class="form-group">
+            <label class="col-sm-2 control-label" for="notice" >描述</label>
+            <div class="col-sm-6" >
+                <textarea class="form-control" id="search-takeOffEndDate" name="description"  v-model="form.description" type="text"/>
+            </div>
+        </div>
+		<div class="modal-footer">
+			<button id="dialog-cancel" type="button" class="btn btn-warning"
+				data-dismiss="modal">取消</button>
+			<button id="dialog-submit" type="button" class="btn btn-success">同意
+			</button>
+		</div>
+	</div>
+</div>
+</form>
+<script type="text/javascript" >
+	var formData = ${str.replace($formData, "/", "\\/", -1)};
+</script>
+<script type="text/javascript" src="${rc.contextPath}/js/configmng/general/form.js"></script>
+
+
+
+
