@@ -18,21 +18,21 @@ public interface ZookDomainDAO {
 	 * sql:
 	 * <pre>select         *      from         ZookDomain      where         id = ?          and is_valid = '1'</pre>
 	 */
-	public ZookDomainDO findById(Long id) throws DataAccessException;
+	ZookDomainDO findById(Long id) throws DataAccessException;
 
 	/**
 	 * 
 	 * sql:
 	 * <pre>select         *      from         ZookDomain      where         domain_path = ?          and is_valid = '1'</pre>
 	 */
-	public ZookDomainDO findByPath(String domainPath) throws DataAccessException;
+	ZookDomainDO findByPath(String domainPath) throws DataAccessException;
 
 	/**
 	 * 
 	 * sql:
 	 * <pre>select         *      from         ZookDomain      where         is_valid = '1'</pre>
 	 */
-	public List<ZookDomainDO> findAll() throws DataAccessException;
+	List<ZookDomainDO> findAll() throws DataAccessException;
 
 	/**
 	 * 
@@ -46,28 +46,28 @@ public interface ZookDomainDAO {
 	 * sql:
 	 * <pre>update         ZookDomain      set         is_valid = '0',update_time = CURRENT_TIMESTAMP       where         id = ?          and is_valid = '1'</pre>
 	 */
-	public int deleteById(Long id) throws DataAccessException;
+	int deleteById(Long id) throws DataAccessException;
 
 	/**
 	 * 
 	 * sql:
 	 * <pre>update         ZookDomain      set         is_valid = '0',update_time = CURRENT_TIMESTAMP      where         domain_path = ?          and is_valid = '1'</pre>
 	 */
-	public int deleteByPath(String domainPath) throws DataAccessException;
+	int deleteByPath(String domainPath) throws DataAccessException;
 
 	/**
 	 * 
 	 * sql:
 	 * <pre>update         ZookDomain      set         domain_name =?,domain_value =?,domain_path = ?,remark =?,update_time = CURRENT_TIMESTAMP         where         id = ?          and is_valid = '1'</pre>
 	 */
-	public int update(ZookDomainDO drmDomain) throws DataAccessException;
+	int update(ZookDomainDO zookDomain) throws DataAccessException;
 
 	/**
 	 * 
 	 * sql:
 	 * <pre>insert      into         ZookDomain         (     domain_name,      domain_path,      domain_value,     remark,      is_valid,      create_time,     update_time,     operator     )          values         (?,?,?,?,?,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,?)</pre>
 	 */
-	public long insert(ZookDomainDO drmDomain) throws DataAccessException;
+	long insert(ZookDomainDO zookDomain) throws DataAccessException;
 
 }
 
