@@ -2,7 +2,7 @@ package com.zook.core.service.impl;
 
 import com.zook.core.common.Constant;
 import com.zook.core.exception.ZookException;
-import com.zook.core.service.ProcessorServie;
+import com.zook.core.service.ProcessorService;
 import com.zook.core.zookeeper.ZookeeperConnector;
 import org.apache.zookeeper.data.Stat;
 import org.springframework.stereotype.Service;
@@ -16,7 +16,7 @@ import java.util.List;
  * Created by Eli on 2018/7/18.
  */
 @Service
-public class ProcessorServieImpl implements ProcessorServie {
+public class ProcessorServieImpl implements ProcessorService {
 
     @Resource
     private ZookeeperConnector zookeeperConnector;

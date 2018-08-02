@@ -6,7 +6,7 @@ import java.util.List;
  * 处理服务器
  * Created by Eli on 2018/7/12.
  */
-public interface ProcessorServie extends BaseService{
+public interface ProcessorService extends BaseService{
 
     /**
      * create zookeeper node with given value
