@@ -2,6 +2,10 @@ package com.zook.core.service;
 
 import com.zook.core.exception.ZookException;
 import com.zook.core.vo.DomainVO;
+import com.zook.persistence.operation.DomainQueryDO;
+
+import java.util.List;
+import java.util.Map;
 
 /**
  * Created by Eli on 2018/8/2.
@@ -12,49 +16,41 @@ public interface DomainService {
      * create domain
      * @param domainVO
      * @return
-     * @throws ZookException
      */
-    boolean createDomain(DomainVO domainVO) throws ZookException;
+    Boolean createDomain(DomainVO domainVO) ;
 
     /**
      * delete domain
      * @param id
      * @return
-     * @throws ZookException
      */
-    boolean deleteDomain(long id) throws ZookException;
+    Boolean deleteDomain(Long id) ;
 
     /**
      * set domain node value
      * @param domainVO
      * @return
-     * @throws ZookException
      */
-    boolean updateDomain(DomainVO domainVO) throws ZookException;
+    Boolean updateDomain(DomainVO domainVO) ;
 
     /**
-     * query domain
-     * @param domainVO
-     * @param page
-     * @param pageSize
+     * 分页查询
+     * @param domainQuery
      * @return
-     * @throws ZookException
      */
-//    PageList<DomainVO> pageQuery(DomainVO domainVO, int page, int pageSize) throws ZookException;
+    Map pageQuery(DomainQueryDO domainQuery);
 
     /**
      *
      * @param domainId
      * @return
-     * @throws ZookException
      */
-    DomainVO findById(long domainId) throws ZookException;
+    DomainVO findById(Long domainId) ;
 
     /**
      *
      * @param path
      * @return
-     * @throws ZookException
      */
-    DomainVO findByPath(String path) throws ZookException;
+    DomainVO findByPath(String path) ;
 }

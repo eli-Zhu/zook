@@ -34,4 +34,9 @@ public class ZookResourceServiceImpl implements ZookResourceService {
     public long insert(ZookResourceDO zookResource) {
         return zookResourceDAO.insert(zookResource);
     }
+
+    @Override
+    public int deleteByDomainId(Long domainId) {
+        return zookResourceDAO.deleteByDomainId(domainId);
+    }
 }

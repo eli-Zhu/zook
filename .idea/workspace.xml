@@ -1,7 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1983a21f-612a-41c1-8a2a-3f317800d24c" name="Default" comment="" />
+    <list default="true" id="1983a21f-612a-41c1-8a2a-3f317800d24c" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_1_24.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zook-core/src/main/java/com/zook/core/mapper/ZookMapper.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/operation/BaseQO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/operation/DomainQueryDO.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zook-web/src/main/java/com/zook/web/controller/DomainController.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/zook-web/src/main/java/com/zook/web/form/ResultMsg.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/zook-core/target/classes/META-INF/MANIFEST.MF" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/zook-core/target/classes/META-INF/maven/com.zook/zook-core/pom.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/zook-core/target/classes/META-INF/maven/com.zook/zook-core/pom.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/zook-core/target/classes/com/zook/core/common/Constant.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/zook-core/target/classes/com/zook/core/exception/ZookException.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/zook-core/target/classes/com/zook/core/service/BaseService.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/zook-core/target/classes/com/zook/core/service/ProcessorServie.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/zook-core/target/classes/com/zook/core/service/impl/ProcessorServieImpl.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/zook-core/target/classes/com/zook/core/zookeeper/ZookeeperConnector.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/zook-core/target/maven-status/maven-compiler-plugin/compile/default-cli/createdFiles.lst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/zook-core/target/maven-status/maven-compiler-plugin/compile/default-cli/inputFiles.lst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/zook-integration/target/classes/META-INF/MANIFEST.MF" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/zook-integration/target/classes/META-INF/maven/com.zook/zook-integration/pom.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/zook-integration/target/classes/META-INF/maven/com.zook/zook-integration/pom.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/zook-integration/target/maven-status/maven-compiler-plugin/compile/default-cli/inputFiles.lst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/zook-persistence/target/classes/META-INF/MANIFEST.MF" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/zook-persistence/target/classes/META-INF/maven/com.zook/zook-persistence/pom.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/zook-persistence/target/classes/META-INF/maven/com.zook/zook-persistence/pom.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/zook-persistence/target/classes/com/zook/persistence/dataobject/DrmAttributeDO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/zook-persistence/target/classes/com/zook/persistence/dataobject/DrmDomainDO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/zook-persistence/target/classes/com/zook/persistence/dataobject/DrmResourceDO.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/zook-persistence/target/maven-status/maven-compiler-plugin/compile/default-cli/createdFiles.lst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/zook-persistence/target/maven-status/maven-compiler-plugin/compile/default-cli/inputFiles.lst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/zook-test/target/classes/META-INF/MANIFEST.MF" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/zook-test/target/classes/META-INF/maven/com.zook/zook-test/pom.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/zook-test/target/classes/META-INF/maven/com.zook/zook-test/pom.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/zook-util/target/classes/META-INF/MANIFEST.MF" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/zook-util/target/classes/META-INF/maven/com.zook/zook-util/pom.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/zook-util/target/classes/META-INF/maven/com.zook/zook-util/pom.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/zook-util/target/maven-status/maven-compiler-plugin/compile/default-cli/inputFiles.lst" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/zook-web/target/classes/com/zook/web/controller/AttributeController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/zook-web/target/classes/com/zook/web/controller/BaseController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/zook-web/target/classes/com/zook/web/controller/ResourceController.class" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/zook-web/target/m2e-jee/web-resources/META-INF/maven/com.zook/zook-web/pom.properties" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/zook-web/target/m2e-jee/web-resources/META-INF/maven/com.zook/zook-web/pom.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zook-persistence/target/classes/com/zook/persistence/daointerface/ZookDomainDAO.class" afterPath="$PROJECT_DIR$/zook-persistence/target/classes/com/zook/persistence/daointerface/ZookDomainDAO.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zook-web/target/maven-status/maven-compiler-plugin/compile/default-cli/createdFiles.lst" afterPath="$PROJECT_DIR$/zook-web/target/maven-status/maven-compiler-plugin/compile/default-cli/createdFiles.lst" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/zook_web_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/zook_web_war_exploded.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_zook_zook_persistence_1_0_SNAPSHOT.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_zook_zook_persistence_1_0_SNAPSHOT.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zook-core/src/main/java/com/zook/core/service/DomainService.java" afterPath="$PROJECT_DIR$/zook-core/src/main/java/com/zook/core/service/DomainService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zook-core/src/main/java/com/zook/core/service/ProcessorService.java" afterPath="$PROJECT_DIR$/zook-core/src/main/java/com/zook/core/service/ProcessorService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zook-core/src/main/java/com/zook/core/service/impl/DomainServiceImpl.java" afterPath="$PROJECT_DIR$/zook-core/src/main/java/com/zook/core/service/impl/DomainServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zook-core/src/main/java/com/zook/core/service/impl/ProcessorServieImpl.java" afterPath="$PROJECT_DIR$/zook-core/src/main/java/com/zook/core/service/impl/ProcessorServieImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zook-core/zook-core.iml" afterPath="$PROJECT_DIR$/zook-core/zook-core.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zook-persistence/pom.xml" afterPath="$PROJECT_DIR$/zook-persistence/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/daointerface/ZookDomainDAO.java" afterPath="$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/daointerface/ZookDomainDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/service/ZookAttributeService.java" afterPath="$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/service/ZookAttributeService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/service/ZookDomainService.java" afterPath="$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/service/ZookDomainService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/service/ZookResourceService.java" afterPath="$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/service/ZookResourceService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/service/impl/ZookAttributeServiceImpl.java" afterPath="$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/service/impl/ZookAttributeServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/service/impl/ZookDomainServiceImpl.java" afterPath="$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/service/impl/ZookDomainServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/service/impl/ZookResourceServiceImpl.java" afterPath="$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/service/impl/ZookResourceServiceImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zook-persistence/zook-persistence.iml" afterPath="$PROJECT_DIR$/zook-persistence/zook-persistence.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zook-web/pom.xml" afterPath="$PROJECT_DIR$/zook-web/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/zook-web/zook-web.iml" afterPath="$PROJECT_DIR$/zook-web/zook-web.iml" />
+    </list>
     <ignored path="zook.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -39,61 +105,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ZookAttribute-sqlmap-mapping.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zook-persistence/src/main/resources/sqlmap/ZookAttribute-sqlmap-mapping.xml">
+      <file leaf-file-name="DomainServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zook-core/src/main/java/com/zook/core/service/impl/DomainServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="10.206897">
-              <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="91" column="54" selection-start-line="91" selection-start-column="54" selection-end-line="91" selection-end-column="54" />
               <folding>
-                <marker date="1533120583000" expanded="true" signature="1569:1673" placeholder="select /*drm... FlightDrmAttribute" />
-                <marker date="1533120583000" expanded="true" signature="1768:1890" placeholder="select /*drm... FlightDrmAttribute" />
-                <marker date="1533120583000" expanded="true" signature="1980:2109" placeholder="select /*drm... FlightDrmAttribute" />
-                <marker date="1533120583000" expanded="true" signature="2195:2282" placeholder="select /*drm... FlightDrmAttribute" />
-                <marker date="1533120583000" expanded="true" signature="3229:3338" placeholder="update Fligh... " />
-                <marker date="1533120583000" expanded="true" signature="3395:3521" placeholder="update Fligh... " />
-                <marker date="1533120583000" expanded="true" signature="3566:3785" placeholder="update Fligh... " />
-                <marker date="1533120583000" expanded="true" signature="3837:4146" placeholder="insert into FlightDrmAttribute" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#3047#3048#0" expanded="true" />
+                <element signature="e#3074#3075#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ZookDomain-sqlmap-mapping.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/zook-persistence/src/main/resources/sqlmap/ZookDomain-sqlmap-mapping.xml">
+      <file leaf-file-name="ZookDomainDAO.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/daointerface/ZookDomainDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.454545">
-              <caret line="60" column="32" selection-start-line="60" selection-start-column="23" selection-end-line="60" selection-end-column="32" />
-              <folding>
-                <marker date="1533121313000" expanded="true" signature="1405:1413" placeholder="select /*drm... FlightDrmDomain" />
-                <marker date="1533121313000" expanded="true" signature="1405:1504" placeholder="select from FlightDrmDomain" />
-                <marker date="1533121313000" expanded="true" signature="1405:3324" placeholder="select /*fin... " />
-                <marker date="1533121313000" expanded="true" signature="1580:1696" placeholder="select from FlightDrmDomain" />
-                <marker date="1533121313000" expanded="true" signature="1769:1853" placeholder="select from FlightDrmDomain" />
-                <marker date="1533121313000" expanded="true" signature="1929:2173" placeholder="select from FlightDrmDomain" />
-                <marker date="1533121313000" expanded="true" signature="2489:2595" placeholder="update ZOOK_... " />
-                <marker date="1533121313000" expanded="true" signature="2640:2762" placeholder="update ZOOK_... " />
-                <marker date="1533121313000" expanded="true" signature="2801:2996" placeholder="update ZOOK_... " />
-                <marker date="1533121313000" expanded="true" signature="3037:3324" placeholder="insert into FlightDrmDomain" />
-              </folding>
+            <state vertical-scroll-proportion="-9.518518">
+              <caret line="75" column="6" selection-start-line="75" selection-start-column="6" selection-end-line="75" selection-end-column="6" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ZookResource-sqlmap-mapping.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/zook-persistence/src/main/resources/sqlmap/ZookResource-sqlmap-mapping.xml">
+      <file leaf-file-name="ZookDomainServiceImpl.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/service/impl/ZookDomainServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6545454">
-              <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+            <state vertical-scroll-proportion="0.41040462">
+              <caret line="43" column="42" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="42" />
               <folding>
-                <marker date="1533121820000" expanded="true" signature="1525:1626" placeholder="select /*drm... FlightDrmResource" />
-                <marker date="1533121820000" expanded="true" signature="1719:1836" placeholder="select from FlightDrmResource" />
-                <marker date="1533121820000" expanded="true" signature="1925:2050" placeholder="select from FlightDrmResource" />
-                <marker date="1533121820000" expanded="true" signature="2136:2222" placeholder="select /*drm... FlightDrmResource" />
-                <marker date="1533121820000" expanded="true" signature="2313:2605" placeholder="select /*drm... FlightDrmResource" />
-                <marker date="1533121820000" expanded="true" signature="2994:3104" placeholder="update ZOOK_... " />
-                <marker date="1533121820000" expanded="true" signature="3159:3282" placeholder="update Fligh... " />
-                <marker date="1533121820000" expanded="true" signature="3327:3542" placeholder="update ZOOK_... " />
-                <marker date="1533121820000" expanded="true" signature="3594:3907" placeholder="insert into FlightDrmResource" />
+                <element signature="e#1108#1109#0" expanded="true" />
+                <element signature="e#1159#1160#0" expanded="true" />
+                <element signature="e#1280#1296#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -110,6 +154,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="GradleLocalSettings">
     <option name="externalProjectsViewState">
       <projects_view />
@@ -118,37 +165,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/zook-client/src/main/java/com/zook/client/annotation/DoBeforeCall.java" />
-        <option value="$PROJECT_DIR$/zook-client/src/main/java/com/zook/client/annotation/ZkAttribute.java" />
-        <option value="$PROJECT_DIR$/zook-client/src/main/java/com/zook/client/annotation/ZkResource.java" />
-        <option value="$PROJECT_DIR$/zook-client/src/main/java/com/zook/client/common/Constant.java" />
-        <option value="$PROJECT_DIR$/zook-client/src/main/java/com/zook/client/context/DefaultContext.java" />
-        <option value="$PROJECT_DIR$/zook-client/src/main/java/com/zook/client/listener/impl/DefaultBaseClientListener.java" />
-        <option value="$PROJECT_DIR$/zook-client/src/main/java/com/zook/client/listener/BaseClientListener.java" />
-        <option value="$PROJECT_DIR$/zook-client/src/main/java/com/zook/client/support/ClientBeanPostProcessor.java" />
-        <option value="$PROJECT_DIR$/zook-client/src/main/java/com/zook/client/zookeeper/ZookeeperConnector.java" />
-        <option value="$PROJECT_DIR$/zook-client/src/main/java/com/zook/client/BaseClientProcessor.java" />
-        <option value="$PROJECT_DIR$/zook-client/src/main/java/com/zook/client/DefaultClientProcessor.java" />
-        <option value="$PROJECT_DIR$/zook-client/src/main/resources/client.xsd" />
-        <option value="$PROJECT_DIR$/zook-client/src/main/java/com/zook/client/spring/ClientNamespaceHandler.java" />
-        <option value="$PROJECT_DIR$/zook-client/src/main/java/com/zook/client/spring/ClientDefinitionParser.java" />
-        <option value="$PROJECT_DIR$/zook-client/src/main/resources/META-INF/spring.handlers" />
-        <option value="$PROJECT_DIR$/zook-client/src/main/resources/META-INF/spring.schemas" />
-        <option value="$PROJECT_DIR$/zook-client/src/main/resources/META-INF/client.xsd" />
-        <option value="$PROJECT_DIR$/zook-web/src/main/java/com/zook/web/controller/BaseController.java" />
-        <option value="$PROJECT_DIR$/zook-web/src/main/java/com/zook/web/controller/AttributeController.java" />
-        <option value="$PROJECT_DIR$/zook-web/src/main/java/com/zook/web/controller/ResourceController.java" />
-        <option value="$PROJECT_DIR$/zook-webdocs/pom.xml" />
-        <option value="$PROJECT_DIR$/zook-webdocs/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/zook-persistence/src/main/resources/META-INF/spring/mybatis-config.xml" />
-        <option value="$PROJECT_DIR$/zook-web/src/main/java/com/zook/web/config/MyBatisConfig.java" />
-        <option value="$PROJECT_DIR$/zook-web/src/resources/WEB-INF/spring.xml" />
-        <option value="$PROJECT_DIR$/zook-core/pom.xml" />
-        <option value="$PROJECT_DIR$/zook-web/src/resources/WEB-INF/spring-mybatis.xml" />
         <option value="$PROJECT_DIR$/zook-web/src/resources/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/zook-persistence/src/main/resources/sqlmap/sqlMapConfig.xml" />
-        <option value="$PROJECT_DIR$/zook-web/pom.xml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/zook-web/src/resources/WEB-INF/spring/spring.xml" />
         <option value="$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/dataobject/DrmDomainDO.java" />
         <option value="$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/dataobject/DrmResourceDO.java" />
@@ -156,12 +174,8 @@
         <option value="$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/dataobject/ZookDomainDO.java" />
         <option value="$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/dataobject/ZookResourceDO.java" />
         <option value="$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/daointerface/DrmAttributeDAO.java" />
-        <option value="$PROJECT_DIR$/zook-persistence/pom.xml" />
-        <option value="$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/daointerface/ZookAttributeDAO.java" />
         <option value="$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/daointerface/DrmDomainDAO.java" />
         <option value="$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/daointerface/DrmResourceDAO.java" />
-        <option value="$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/daointerface/ZookDomainDAO.java" />
-        <option value="$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/daointerface/ZookResourceDAO.java" />
         <option value="$PROJECT_DIR$/zook-persistence/src/main/resources/sqlmap/DrmAttribute-sqlmap-mapping.xml" />
         <option value="$PROJECT_DIR$/zook-persistence/src/main/resources/sqlmap/common-sqlmap-mapping.xml" />
         <option value="$PROJECT_DIR$/zook-persistence/src/main/resources/sqlmap/DrmDomain-sqlmap-mapping.xml" />
@@ -169,6 +183,39 @@
         <option value="$PROJECT_DIR$/zook-persistence/src/main/resources/sqlmap/ZookAttribute-sqlmap-mapping.xml" />
         <option value="$PROJECT_DIR$/zook-persistence/src/main/resources/sqlmap/ZookDomain-sqlmap-mapping.xml" />
         <option value="$PROJECT_DIR$/zook-persistence/src/main/resources/sqlmap/ZookResource-sqlmap-mapping.xml" />
+        <option value="$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/service/ZookResourceServiec.java" />
+        <option value="$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/service/ZookResourceServie.java" />
+        <option value="$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/daointerface/ZookAttributeDAO.java" />
+        <option value="$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/daointerface/ZookResourceDAO.java" />
+        <option value="$PROJECT_DIR$/zook-core/src/main/java/com/zook/core/service/AttributeService.java" />
+        <option value="$PROJECT_DIR$/zook-core/src/main/java/com/zook/core/service/ResourceService.java" />
+        <option value="$PROJECT_DIR$/zook-core/src/main/java/com/zook/core/vo/zookBaseVO.java" />
+        <option value="$PROJECT_DIR$/zook-core/src/main/java/com/zook/core/vo/AttributeVO.java" />
+        <option value="$PROJECT_DIR$/zook-core/src/main/java/com/zook/core/vo/ResourceVO.java" />
+        <option value="$PROJECT_DIR$/zook-core/src/main/java/com/zook/core/vo/DomainVO.java" />
+        <option value="$PROJECT_DIR$/zook-persistence/pom.xml" />
+        <option value="$PROJECT_DIR$/zook-core/pom.xml" />
+        <option value="$PROJECT_DIR$/zook-core/src/main/java/com/zook/core/service/impl/AttributeServiceImpl.java" />
+        <option value="$PROJECT_DIR$/zook-core/src/main/java/com/zook/core/service/impl/ResourceServiceImpl.java" />
+        <option value="$PROJECT_DIR$/zook-core/src/main/java/com/zook/core/mapper/ZookMapper.java" />
+        <option value="$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/service/impl/ZookResourceServiceImpl.java" />
+        <option value="$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/service/ZookAttributeService.java" />
+        <option value="$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/service/ZookResourceService.java" />
+        <option value="$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/service/impl/ZookAttributeServiceImpl.java" />
+        <option value="$PROJECT_DIR$/zook-core/src/main/java/com/zook/core/service/ProcessorService.java" />
+        <option value="$PROJECT_DIR$/zook-core/src/main/java/com/zook/core/service/impl/ProcessorServieImpl.java" />
+        <option value="$PROJECT_DIR$/zook-web/src/main/java/com/zook/web/controller/form.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/zook-web/pom.xml" />
+        <option value="$PROJECT_DIR$/zook-web/src/main/java/com/zook/web/form/ResultMsg.java" />
+        <option value="$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/operation/BaseQO.java" />
+        <option value="$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/operation/DomainQueryDO.java" />
+        <option value="$PROJECT_DIR$/zook-web/src/main/java/com/zook/web/controller/DomainController.java" />
+        <option value="$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/daointerface/ZookDomainDAO.java" />
+        <option value="$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/service/ZookDomainService.java" />
+        <option value="$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/service/impl/ZookDomainServiceImpl.java" />
+        <option value="$PROJECT_DIR$/zook-core/src/main/java/com/zook/core/service/DomainService.java" />
+        <option value="$PROJECT_DIR$/zook-core/src/main/java/com/zook/core/service/impl/DomainServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -206,7 +253,17 @@
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="zook-parent" />
+          <option name="myItemId" value="zook-persistence" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
+        </PATH_ELEMENT>
+      </PATH>
+      <PATH>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="" />
+          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
+        </PATH_ELEMENT>
+        <PATH_ELEMENT>
+          <option name="myItemId" value="zook-persistence" />
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
@@ -220,7 +277,7 @@
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="zook-parent" />
+          <option name="myItemId" value="zook-persistence" />
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
@@ -228,18 +285,8 @@
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$PluginsNode" />
         </PATH_ELEMENT>
         <PATH_ELEMENT>
-          <option name="myItemId" value="compiler" />
+          <option name="myItemId" value="install" />
           <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$PluginNode" />
-        </PATH_ELEMENT>
-      </PATH>
-      <PATH>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$RootNode" />
-        </PATH_ELEMENT>
-        <PATH_ELEMENT>
-          <option name="myItemId" value="zook-parent" />
-          <option name="myItemType" value="org.jetbrains.idea.maven.navigator.MavenProjectsStructure$ProjectNode" />
         </PATH_ELEMENT>
       </PATH>
     </treeState>
@@ -256,7 +303,7 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
-    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="2" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectView">
@@ -274,8 +321,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -347,14 +393,6 @@
               <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="sqlmap" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -378,7 +416,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="persistence" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -412,7 +458,41 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="dataobject" />
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="impl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zook" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zook" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="zook-persistence" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="persistence" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -452,7 +532,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -460,7 +541,7 @@
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tc-flight-drm" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="two.files.diff.last.used.folder" value="$PROJECT_DIR$/zook-util" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -471,11 +552,11 @@
       <recent name="src.main.java.com.zook.client.common" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/zook-web/src/main/java/com/zook/web/form" />
       <recent name="$PROJECT_DIR$/zook-persistence/src/main/resources/sqlmap" />
       <recent name="$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/daointerface" />
       <recent name="$PROJECT_DIR$/zook-web/src/resources" />
       <recent name="$PROJECT_DIR$/zook-web/src/resources/WEB-INF/spring" />
-      <recent name="$PROJECT_DIR$/zook-web/src/resources/WEB-INF" />
     </key>
   </component>
   <component name="RunManager">
@@ -929,11 +1010,38 @@
       <workItem from="1531894358961" duration="48000" />
       <workItem from="1531911228382" duration="27088000" />
       <workItem from="1532574048261" duration="30866000" />
+      <workItem from="1533200466477" duration="17981000" />
+      <workItem from="1533891934240" duration="10080000" />
     </task>
+    <task id="LOCAL-00001" summary="添加注释">
+      <created>1533201110910</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1533201110910</updated>
+    </task>
+    <task id="LOCAL-00002" summary="添加dao的service">
+      <created>1533210365052</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1533210365052</updated>
+    </task>
+    <task id="LOCAL-00003" summary="添加资源各个模型的service">
+      <created>1533214956373</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1533214956373</updated>
+    </task>
+    <task id="LOCAL-00004" summary="引入数据库层">
+      <created>1533214993808</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1533214993808</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87610000" />
+    <option name="totallyTimeSpent" value="115671000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="812" extended-state="0" />
@@ -946,12 +1054,13 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4861111" sideWeight="0.50858366" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30416667" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30277777" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22083333" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1981402" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" x="627" y="115" width="291" height="720" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19313304" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" x="627" y="115" width="291" height="720" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24964234" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -963,7 +1072,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4861111" sideWeight="0.4914163" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -971,7 +1079,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4861111" sideWeight="0.50858366" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297568" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -985,9 +1093,9 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30416667" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.30277777" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22083333" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1981402" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" x="627" y="115" width="291" height="720" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19313304" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" x="627" y="115" width="291" height="720" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32916668" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1004,8 +1112,24 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="添加注释" />
+    <MESSAGE value="添加dao的service" />
+    <MESSAGE value="添加资源各个模型的service" />
+    <MESSAGE value="引入数据库层" />
+    <option name="LAST_COMMIT_MESSAGE" value="引入数据库层" />
+  </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/zook-core/src/main/java/com/zook/core/vo/AttributeVO.java</url>
+          <line>43</line>
+          <properties />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="antWorkspaceConfiguration">
@@ -1013,308 +1137,39 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/zook-core/src/main/java/com/zook/core/zookeeper/ZookeeperConnector.java">
+    <entry file="file://$PROJECT_DIR$/zook-persistence/src/main/resources/sqlmap/ZookResource-sqlmap-mapping.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36022514">
-          <caret line="8" column="28" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zook-client/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.568">
-          <caret line="36" column="21" selection-start-line="36" selection-start-column="21" selection-end-line="36" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zook-core/src/main/java/com/zook/core/common/Constant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48554912">
-          <caret line="14" column="10" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zook-client/src/main/java/com/zook/client/annotation/DoAfterCall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="8" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zook-client/src/main/java/com/zook/client/annotation/DoBeforeCall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="8" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zook-client/src/main/java/com/zook/client/annotation/ZkAttribute.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="8" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zook-client/src/main/java/com/zook/client/annotation/ZkResource.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="8" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zook-client/src/main/java/com/zook/client/common/Constant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="8" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zook-client/src/main/java/com/zook/client/context/DefaultContext.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="8" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zook-client/src/main/java/com/zook/client/listener/BaseClientListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10549451">
-          <caret line="0" column="8" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
-          <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zook-client/src/main/java/com/zook/client/listener/impl/DefaultBaseClientListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41618496">
-          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zook-client/src/main/java/com/zook/client/zookeeper/ZookeeperConnector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20809248">
-          <caret line="0" column="8" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
-          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zook-client/src/main/java/com/zook/client/BaseClientProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="8" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zook-client/src/main/java/com/zook/client/BaseProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20809248">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zook-client/src/main/java/com/zook/client/DefaultClientProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2270677">
-          <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
+        <state vertical-scroll-proportion="0.67830044">
+          <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1460#1468#0" expanded="false" />
-            <element signature="e#2820#2828#0" expanded="false" />
+            <marker date="1533121820000" expanded="true" signature="1525:1626" placeholder="select /*drm... FlightDrmResource" />
+            <marker date="1533121820000" expanded="true" signature="1719:1836" placeholder="select from FlightDrmResource" />
+            <marker date="1533121820000" expanded="true" signature="1925:2050" placeholder="select from FlightDrmResource" />
+            <marker date="1533121820000" expanded="true" signature="2136:2222" placeholder="select /*drm... FlightDrmResource" />
+            <marker date="1533121820000" expanded="true" signature="2313:2605" placeholder="select /*drm... FlightDrmResource" />
+            <marker date="1533121820000" expanded="true" signature="2994:3104" placeholder="update ZOOK_... " />
+            <marker date="1533121820000" expanded="true" signature="3159:3282" placeholder="update Fligh... " />
+            <marker date="1533121820000" expanded="true" signature="3327:3542" placeholder="update ZOOK_... " />
+            <marker date="1533121820000" expanded="true" signature="3594:3907" placeholder="insert into FlightDrmResource" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/5.0.6.RELEASE/spring-beans-5.0.6.RELEASE-sources.jar!/org/springframework/beans/factory/xml/NamespaceHandlerSupport.java">
+    <entry file="file://$PROJECT_DIR$/zook-persistence/src/main/resources/sqlmap/ZookDomain-sqlmap-mapping.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.9387755">
-          <caret line="44" column="22" selection-start-line="44" selection-start-column="22" selection-end-line="44" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/5.0.6.RELEASE/spring-beans-5.0.6.RELEASE-sources.jar!/org/springframework/beans/factory/xml/AbstractSingleBeanDefinitionParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.122449">
-          <caret line="47" column="22" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/5.0.6.RELEASE/spring-core-5.0.6.RELEASE-sources.jar!/org/springframework/util/xml/DomUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37414965">
-          <caret line="95" column="26" selection-start-line="95" selection-start-column="26" selection-end-line="95" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zook-client/src/main/java/com/zook/client/support/ClientBeanPostProcessor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20408164">
-          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zook-client/src/main/java/com/zook/client/spring/ClientNamespaceHandler.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3265306">
-          <caret line="8" column="35" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zook-client/src/main/resources/META-INF/spring.schemas">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="66" selection-start-line="0" selection-start-column="66" selection-end-line="0" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zook-client/src/main/resources/META-INF/spring.handlers">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.040816326">
-          <caret line="1" column="41" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zook-client/src/main/resources/META-INF/client.xsd">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45371777">
-          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zook-client/src/main/java/com/zook/client/spring/ClientDefinitionParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8323699">
-          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.036418818">
+          <caret line="60" column="32" selection-start-line="60" selection-start-column="23" selection-end-line="60" selection-end-column="32" />
           <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#695#696#0" expanded="false" />
-            <element signature="e#746#747#0" expanded="false" />
-            <element signature="e#817#818#0" expanded="false" />
-            <element signature="e#878#879#0" expanded="false" />
+            <marker date="1533121313000" expanded="true" signature="1405:1413" placeholder="select /*drm... FlightDrmDomain" />
+            <marker date="1533121313000" expanded="true" signature="1405:1504" placeholder="select from FlightDrmDomain" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zook-web/src/main/java/com/zook/web/controller/BaseController.java">
+    <entry file="file://$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/dataobject/ZookAttributeDO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20809248">
-          <caret line="6" column="27" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zook-web/src/main/java/com/zook/web/controller/AttributeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20809248">
-          <caret line="6" column="56" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zook-web/src/main/java/com/zook/web/controller/ResourceController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.20809248">
-          <caret line="6" column="55" selection-start-line="6" selection-start-column="55" selection-end-line="6" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zook-web/monitor.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32776934">
-          <caret line="9" column="11" selection-start-line="9" selection-start-column="11" selection-end-line="9" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zook-web/src/resources/WEB-INF/config/toolbox.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.0.6.RELEASE/spring-web-5.0.6.RELEASE-sources.jar!/org/springframework/web/filter/CharacterEncodingFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33236995">
-          <caret line="45" column="13" selection-start-line="45" selection-start-column="13" selection-end-line="45" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zook.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zook-core/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.67223066">
-          <caret line="32" column="40" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zook-web/src/resources/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2545455">
-          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zook-web/src/resources/WEB-INF/db/mybatis.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zook-web/src/resources/static/js/drm/domain/list.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zook-web/src/resources/WEB-INF/config/velocity.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zook-web/src/resources/WEB-INF/spring/spring.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.03966942">
-          <caret line="71" column="4" selection-start-line="71" selection-start-column="4" selection-end-line="71" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zook-web/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.599393">
-          <caret line="44" column="46" selection-start-line="44" selection-start-column="39" selection-end-line="44" selection-end-column="46" />
+        <state vertical-scroll-proportion="0.15895954">
+          <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="15" selection-end-column="14" />
           <folding />
         </state>
       </provider>
@@ -1327,84 +1182,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/dataobject/ZookDomainDO.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/5.0.6.RELEASE/spring-context-5.0.6.RELEASE-sources.jar!/org/springframework/stereotype/Service.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19364162">
-          <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zook-web/src/resources/WEB-INF/spring/spring-mybatis.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49367088">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/dataobject/ZookAttributeDO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15895954">
-          <caret line="14" column="3" selection-start-line="14" selection-start-column="3" selection-end-line="15" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.733333">
-          <caret line="126" column="25" selection-start-line="87" selection-start-column="11" selection-end-line="126" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-tx/5.0.6.RELEASE/spring-tx-5.0.6.RELEASE-sources.jar!/org/springframework/dao/DataAccessException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding>
-            <element signature="e#1538#1565#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zook-persistence/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.2727275">
-          <caret line="10" column="38" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/daointerface/ZookDomainDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24277456">
-          <caret line="12" column="30" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/daointerface/ZookResourceDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24277456">
-          <caret line="12" column="32" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/daointerface/ZookAttributeDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.27745664">
-          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-          <folding />
+        <state vertical-scroll-proportion="0.41040462">
+          <caret line="47" column="18" selection-start-line="47" selection-start-column="18" selection-end-line="47" selection-end-column="18" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/zook-persistence/src/main/resources/sqlmap/ZookAttribute-sqlmap-mapping.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="10.206897">
-          <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+        <state vertical-scroll-proportion="4.552352">
+          <caret line="125" column="4" selection-start-line="125" selection-start-column="4" selection-end-line="125" selection-end-column="4" />
           <folding>
             <marker date="1533120583000" expanded="true" signature="1569:1673" placeholder="select /*drm... FlightDrmAttribute" />
             <marker date="1533120583000" expanded="true" signature="1768:1890" placeholder="select /*drm... FlightDrmAttribute" />
@@ -1418,39 +1206,409 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zook-persistence/src/main/resources/sqlmap/ZookDomain-sqlmap-mapping.xml">
+    <entry file="file://$PROJECT_DIR$/zook-core/src/main/java/com/zook/core/exception/ZookException.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.454545">
-          <caret line="60" column="32" selection-start-line="60" selection-start-column="23" selection-end-line="60" selection-end-column="32" />
+        <state vertical-scroll-proportion="0.20809248">
+          <caret line="6" column="26" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zook-core/src/main/java/com/zook/core/service/ResourceService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7283237">
+          <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zook-core/src/main/java/com/zook/core/vo/ZookBaseVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7283237">
+          <caret line="21" column="31" selection-start-line="21" selection-start-column="31" selection-end-line="21" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zook-core/src/main/java/com/zook/core/vo/AttributeVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.1791908">
+          <caret line="36" column="5" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
           <folding>
-            <marker date="1533121313000" expanded="true" signature="1405:1413" placeholder="select /*drm... FlightDrmDomain" />
-            <marker date="1533121313000" expanded="true" signature="1405:1504" placeholder="select from FlightDrmDomain" />
-            <marker date="1533121313000" expanded="true" signature="1405:3324" placeholder="select /*fin... " />
-            <marker date="1533121313000" expanded="true" signature="1580:1696" placeholder="select from FlightDrmDomain" />
-            <marker date="1533121313000" expanded="true" signature="1769:1853" placeholder="select from FlightDrmDomain" />
-            <marker date="1533121313000" expanded="true" signature="1929:2173" placeholder="select from FlightDrmDomain" />
-            <marker date="1533121313000" expanded="true" signature="2489:2595" placeholder="update ZOOK_... " />
-            <marker date="1533121313000" expanded="true" signature="2640:2762" placeholder="update ZOOK_... " />
-            <marker date="1533121313000" expanded="true" signature="2801:2996" placeholder="update ZOOK_... " />
-            <marker date="1533121313000" expanded="true" signature="3037:3324" placeholder="insert into FlightDrmDomain" />
+            <element signature="e#714#715#0" expanded="false" />
+            <element signature="e#739#740#0" expanded="false" />
+            <element signature="e#836#837#0" expanded="false" />
+            <element signature="e#869#870#0" expanded="false" />
+            <element signature="e#1003#1004#0" expanded="false" />
+            <element signature="e#1039#1040#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/zook-persistence/src/main/resources/sqlmap/ZookResource-sqlmap-mapping.xml">
+    <entry file="file://$PROJECT_DIR$/zook-core/src/main/java/com/zook/core/vo/ResourceVO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6545454">
-          <caret line="30" column="4" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.10404624">
+          <caret line="3" column="9" selection-start-line="3" selection-start-column="9" selection-end-line="3" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zook-persistence/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.2424242">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zook-core/src/main/java/com/zook/core/service/impl/AttributeServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="25" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
           <folding>
-            <marker date="1533121820000" expanded="true" signature="1525:1626" placeholder="select /*drm... FlightDrmResource" />
-            <marker date="1533121820000" expanded="true" signature="1719:1836" placeholder="select from FlightDrmResource" />
-            <marker date="1533121820000" expanded="true" signature="1925:2050" placeholder="select from FlightDrmResource" />
-            <marker date="1533121820000" expanded="true" signature="2136:2222" placeholder="select /*drm... FlightDrmResource" />
-            <marker date="1533121820000" expanded="true" signature="2313:2605" placeholder="select /*drm... FlightDrmResource" />
-            <marker date="1533121820000" expanded="true" signature="2994:3104" placeholder="update ZOOK_... " />
-            <marker date="1533121820000" expanded="true" signature="3159:3282" placeholder="update Fligh... " />
-            <marker date="1533121820000" expanded="true" signature="3327:3542" placeholder="update ZOOK_... " />
-            <marker date="1533121820000" expanded="true" signature="3594:3907" placeholder="insert into FlightDrmResource" />
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zook-core/src/main/java/com/zook/core/service/impl/ResourceServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.2138728">
+          <caret line="35" column="26" selection-start-line="35" selection-start-column="26" selection-end-line="35" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="6" selection-start-line="0" selection-start-column="6" selection-end-line="0" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zook-client/src/main/java/com/zook/client/DefaultClientProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.1618497">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zook-client/src/main/java/com/zook/client/zookeeper/ZookeeperConnector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.4624279">
+          <caret line="79" column="9" selection-start-line="79" selection-start-column="9" selection-end-line="79" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zook-client/src/main/java/com/zook/client/support/ClientBeanPostProcessor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31213874">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zook-core/src/main/java/com/zook/core/zookeeper/ZookeeperConnector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.10404624">
+          <caret line="41" column="13" selection-start-line="41" selection-start-column="13" selection-end-line="41" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zook-client/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9104704">
+          <caret line="25" column="27" selection-start-line="25" selection-start-column="27" selection-end-line="25" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zook-core/src/main/java/com/zook/core/common/Constant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5202312">
+          <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zook-core/src/main/java/com/zook/core/mapper/ZookMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33236995">
+          <caret line="42" column="27" selection-start-line="42" selection-start-column="27" selection-end-line="42" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#2068#2069#0" expanded="false" />
+            <element signature="e#2122#2123#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/daointerface/ZookResourceDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.9768786">
+          <caret line="62" column="0" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="67" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/service/impl/ZookResourceServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5202312">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="false" />
+            <element signature="e#640#641#0" expanded="false" />
+            <element signature="e#691#692#0" expanded="false" />
+            <element signature="e#750#751#0" expanded="false" />
+            <element signature="e#798#799#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/service/ZookResourceService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.10404624">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/service/ZookAttributeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zook-core/src/main/java/com/zook/core/service/AttributeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.24277456">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zook-core/src/main/java/com/zook/core/service/ProcessorService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="60" column="12" selection-start-line="60" selection-start-column="12" selection-end-line="60" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zook-core/src/main/java/com/zook/core/service/impl/ProcessorServieImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="108" column="37" selection-start-line="108" selection-start-column="37" selection-end-line="108" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/service/impl/ZookAttributeServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3468208">
+          <caret line="24" column="45" selection-start-line="24" selection-start-column="45" selection-end-line="24" selection-end-column="45" />
+          <folding>
+            <element signature="e#759#760#0" expanded="false" />
+            <element signature="e#808#809#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zook-web/src/main/java/com/zook/web/controller/BaseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.30379745">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zook-core/src/main/java/com/zook/core/vo/DomainVO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.25738397">
+          <caret line="6" column="21" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zook-util/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.056145675">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.721519">
+          <caret line="175" column="25" selection-start-line="175" selection-start-column="25" selection-end-line="175" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zook-web/zook-web.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.566474">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.metadata/.plugins/org.eclipse.core.resources/.history/26/c05e624fb490001811eea50344548288">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/operation/BaseQO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23699422">
+          <caret line="8" column="71" selection-start-line="8" selection-start-column="71" selection-end-line="8" selection-end-column="71" />
+          <folding>
+            <element signature="e#334#335#0" expanded="false" />
+            <element signature="e#361#362#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zook-web/src/main/java/com/zook/web/controller/AttributeController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20809248">
+          <caret line="6" column="49" selection-start-line="6" selection-start-column="49" selection-end-line="6" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zook-web/src/main/java/com/zook/web/form/ResultMsg.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36705202">
+          <caret line="42" column="28" selection-start-line="42" selection-start-column="19" selection-end-line="42" selection-end-column="28" />
+          <folding>
+            <element signature="e#846#847#0" expanded="false" />
+            <element signature="e#902#903#0" expanded="false" />
+            <element signature="e#938#939#0" expanded="false" />
+            <element signature="e#1002#1003#0" expanded="false" />
+            <element signature="e#1054#1055#0" expanded="false" />
+            <element signature="e#1113#1114#0" expanded="false" />
+            <element signature="e#1302#1303#0" expanded="false" />
+            <element signature="e#1343#1344#0" expanded="false" />
+            <element signature="e#1730#1731#0" expanded="false" />
+            <element signature="e#1759#1760#0" expanded="false" />
+            <element signature="e#2066#2067#0" expanded="false" />
+            <element signature="e#2096#2097#0" expanded="false" />
+            <element signature="e#2482#2483#0" expanded="false" />
+            <element signature="e#2514#2515#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zook-core/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.75872535">
+          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zook-web/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39453718">
+          <caret line="29" column="21" selection-start-line="29" selection-start-column="21" selection-end-line="29" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/operation/DomainQueryDO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="8" selection-start-line="0" selection-start-column="8" selection-end-line="0" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/zook/zook-persistence/1.0-SNAPSHOT/zook-persistence-1.0-SNAPSHOT-sources.jar!/com/zook/persistence/service/ZookDomainService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5549133">
+          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/dataobject/ZookDomainDO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1734104">
+          <caret line="18" column="25" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/daointerface/ZookAttributeDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8959538">
+          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="71" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/service/ZookDomainService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6242775">
+          <caret line="22" column="17" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zook-core/src/main/java/com/zook/core/service/DomainService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33236995">
+          <caret line="40" column="26" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zook-web/src/main/java/com/zook/web/controller/DomainController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.65317917">
+          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#992#993#0" expanded="true" />
+            <element signature="e#1028#1029#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zook-core/src/main/java/com/zook/core/service/impl/DomainServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="91" column="54" selection-start-line="91" selection-start-column="54" selection-end-line="91" selection-end-column="54" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3047#3048#0" expanded="true" />
+            <element signature="e#3074#3075#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/daointerface/ZookDomainDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.518518">
+          <caret line="75" column="6" selection-start-line="75" selection-start-column="6" selection-end-line="75" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/zook-persistence/src/main/java/com/zook/persistence/service/impl/ZookDomainServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.41040462">
+          <caret line="43" column="42" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="42" />
+          <folding>
+            <element signature="e#1108#1109#0" expanded="true" />
+            <element signature="e#1159#1160#0" expanded="true" />
+            <element signature="e#1280#1296#0" expanded="true" />
           </folding>
         </state>
       </provider>

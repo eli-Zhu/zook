@@ -3,6 +3,7 @@
  * Copyright (c) 2004-2016 All Rights Reserved.
  */package com.zook.persistence.daointerface;
 import com.zook.persistence.dataobject.ZookDomainDO;
+import com.zook.persistence.operation.DomainQueryDO;
 import org.springframework.dao.DataAccessException;
 import java.util.*;
 
@@ -34,12 +35,6 @@ public interface ZookDomainDAO {
 	 */
 	List<ZookDomainDO> findAll() throws DataAccessException;
 
-	/**
-	 * 
-	 * sql:
-	 * <pre>select         *         from         ZookDomain          where         is_valid = '1'                     and      domain_name like concat('%', ?,'%' )                   and      domain_path like concat('%', ?,'%' )</pre>
-	 */
-//	public PageList<ZookDomainDO> domainPage(DomainPageQuery param) throws DataAccessException;
 
 	/**
 	 * 
@@ -68,6 +63,22 @@ public interface ZookDomainDAO {
 	 * <pre>insert      into         ZookDomain         (     domain_name,      domain_path,      domain_value,     remark,      is_valid,      create_time,     update_time,     operator     )          values         (?,?,?,?,?,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,?)</pre>
 	 */
 	long insert(ZookDomainDO zookDomain) throws DataAccessException;
+
+	/**
+	 *
+	 * @param domainQuery
+	 * @return
+	 * @throws DataAccessException
+     */
+	int count(DomainQueryDO domainQuery) throws DataAccessException;
+
+	/**
+	 *
+	 * @param domainQuery
+	 * @return
+	 * @throws DataAccessException
+     */
+	List<ZookDomainDO> queryByParam(DomainQueryDO domainQuery) throws DataAccessException;
 
 }
 

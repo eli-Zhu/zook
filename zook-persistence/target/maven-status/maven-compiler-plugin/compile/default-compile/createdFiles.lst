@@ -1,0 +1,14 @@
+com/zook/persistence/service/ZookDomainService.class
+com/zook/persistence/service/ZookAttributeService.class
+com/zook/persistence/daointerface/ZookResourceDAO.class
+com/zook/persistence/operation/DomainQueryDO.class
+com/zook/persistence/daointerface/ZookAttributeDAO.class
+com/zook/persistence/dataobject/ZookAttributeDO.class
+com/zook/persistence/dataobject/ZookResourceDO.class
+com/zook/persistence/daointerface/ZookDomainDAO.class
+com/zook/persistence/operation/BaseQO.class
+com/zook/persistence/service/impl/ZookDomainServiceImpl.class
+com/zook/persistence/dataobject/ZookDomainDO.class
+com/zook/persistence/service/impl/ZookResourceServiceImpl.class
+com/zook/persistence/service/ZookResourceService.class
+com/zook/persistence/service/impl/ZookAttributeServiceImpl.class

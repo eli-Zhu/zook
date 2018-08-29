@@ -58,5 +58,5 @@ public interface ProcessorService extends BaseService{
      * cascade delete(串联删除)
      * @param path
      */
-    void cascadeDelete(String path);
+    Boolean cascadeDelete(String path);
 }

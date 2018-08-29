@@ -15,4 +15,6 @@ public interface ZookResourceService {
     List<ZookResourceDO> findAll();
 
     long insert(ZookResourceDO zookResource);
+
+    int deleteByDomainId(Long domainId);
 }

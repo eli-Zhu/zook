@@ -15,4 +15,6 @@ public interface ZookAttributeService {
     List<ZookAttributeDO> findAll();
 
     long insert(ZookAttributeDO zookAttribute);
+
+    int deleteByResourceId(Long resourceId) ;
 }

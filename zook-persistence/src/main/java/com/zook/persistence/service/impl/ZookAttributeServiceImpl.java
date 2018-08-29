@@ -34,4 +34,9 @@ public class ZookAttributeServiceImpl implements ZookAttributeService{
     public long insert(ZookAttributeDO zookAttribute) {
         return zookAttributeDAO.insert(zookAttribute);
     }
+
+    @Override
+    public int deleteByResourceId(Long resourceId) {
+        return zookAttributeDAO.deleteByResourceId(resourceId);
+    }
 }

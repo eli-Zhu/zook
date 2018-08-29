@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.zook.persistence.daointerface.ZookDomainDAO">
+
+    
+    <resultMap id="BaseResultMap" type="com.zook.persistence.dataobject.ZookDomainDO">
+		<result property="id" column="id" javaType="long" jdbcType="BIGINT"   />
+		<result property="domainName" column="domain_name" javaType="java.lang.String" jdbcType="VARCHAR"  />
+		<result property="domainPath" column="domain_path" javaType="java.lang.String" jdbcType="VARCHAR"  />
+		<result property="domainValue" column="domain_value" javaType="java.lang.String" jdbcType="VARCHAR"  />
+		<result property="isValid" column="is_valid" javaType="java.lang.String" jdbcType="VARCHAR"  />
+		<result property="remark" column="remark" javaType="java.lang.String" jdbcType="VARCHAR"  />
+		<result property="createTime" column="create_time" javaType="java.util.Date" jdbcType="TIMESTAMP"  />
+		<result property="updateTime" column="update_time" javaType="java.util.Date" jdbcType="TIMESTAMP"  />
+		<result property="operator" column="operator" javaType="java.lang.String" jdbcType="VARCHAR"  />
+    </resultMap>
+
+	<sql id="Base_Column_List" >
+		id,domain_name,domain_path,domain_value,is_valid,remark,create_time,update_time,operator
+	</sql>
+	
+	<select id="findById" resultMap="BaseResultMap" >
+    	select   <include refid="Base_Column_List" />  from ZOOK_DOMAIN where id = #{id} and is_valid = '1'
+	</select>
+
+
+
+
+
+
+	<select id="findByPath" resultMap="BaseResultMap" >
+    	select   <include refid="Base_Column_List" />  from ZOOK_DOMAIN where domain_path = #{domainPath} and is_valid = '1'
+	</select>
+
+
+
+
+
+
+	<select id="findAll" resultMap="BaseResultMap" >
+    	select   <include refid="Base_Column_List" />  from ZOOK_DOMAIN where is_valid = '1'
+	</select>
+
+
+
+
+
+
+	<select id="domainPage" resultMap="BaseResultMap" >
+    	select   <include refid="Base_Column_List" />  from ZOOK_DOMAIN
+   where is_valid = '1'
+		<if test="domain_name!=null">
+			AND domain_name like #{domainName}
+		</if>
+		<if test="domain_path!=null">
+			AND domain_path like #{domainPath}
+		</if>
+	</select>
+
+	<select id="count" resultMap="long" >
+    	select   count(*)  from ZOOK_DOMAIN
+   where is_valid = '1'
+		<if test="domain_name!=null">
+			AND domain_name like #{domainName}
+		</if>
+		<if test="domain_path!=null">
+			AND domain_path like #{domainPath}
+		</if>
+	</select>
+
+
+
+
+
+	<update id="deleteById">
+		update ZOOK_DOMAIN set is_valid = '0',update_time = CURRENT_TIMESTAMP  where id = #{id} and is_valid = '1'
+	</update>
+
+
+
+	<update id="deleteByPath">
+		update ZOOK_DOMAIN set is_valid = '0',update_time = CURRENT_TIMESTAMP where domain_path = #{domainPath} and is_valid = '1'
+	</update>
+
+
+
+	<update id="update">
+		update ZOOK_DOMAIN set domain_name =#{domainName},domain_value =#{domainValue},domain_path = #{domainPath},remark =#{remark},update_time = CURRENT_TIMESTAMP
+   where id = #{id} and is_valid = '1'
+	</update>
+
+
+
+
+
+	<insert id="insert">
+		insert into ZOOK_DOMAIN
+   (
+    domain_name, 
+    domain_path, 
+    domain_value,
+    remark, 
+    is_valid, 
+    create_time,
+    update_time,
+    operator
+    ) 
+   values(#{domainName},#{domainPath},#{domainValue},#{remark},#{isValid},CURRENT_TIMESTAMP,CURRENT_TIMESTAMP,#{operator})
+	</insert>
+
+</mapper>
+

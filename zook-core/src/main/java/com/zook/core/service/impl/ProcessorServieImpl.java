@@ -96,17 +96,25 @@ public class ProcessorServieImpl implements ProcessorService {
     }
 
     @Override
-    public void cascadeDelete(String path) {
-        path = getZkPath(path);
-        List<String> childList = getChildrenNodes(path);
-        if (CollectionUtils.isEmpty(childList)) {
-            delete(path);
-        } else {
-            for (String child : childList) {
-                cascadeDelete(path + Constant.BACK_SLASH + child);
+    public Boolean cascadeDelete(String path) {
+        Boolean result=false;
+        try {
+            path = getZkPath(path);
+            List<String> childList = getChildrenNodes(path);
+            if (CollectionUtils.isEmpty(childList)) {
+                result=delete(path);
+            } else {
+                for (String child : childList) {
+                    if(!cascadeDelete(path + Constant.BACK_SLASH + child)){
+                        return result;
+                    }
+                }
+                result=delete(path);
             }
-            delete(path);
+        }catch(Exception e){
+            throw new ZookException("cascadeDelete zook nodes fail:"+path);
         }
+        return result;
     }
 
     /**
